@@ -6,7 +6,6 @@
     var heroPosition = 0;
     var totalTiles = 25;
     var coloredTiles = 0;
-    var popSound = new Audio("audio/bubble.wav");
     var customGameboards = [
       [
         [0, 0, 0, 0, 0],
@@ -77,6 +76,41 @@
         [0, 0, 2, 2, 0],
         [0, 0, 0, 0, 0],
         [0, 0, 0, 0, 2]
+      ],
+      [
+        [0, 0, 0, 0, 0],
+        [0, 2, 2, 2, 0],
+        [0, 2, 2, 2, 0],
+        [0, 2, 2, 2, 0],
+        [0, 0, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0, 2],
+        [0, 0, 2, 0, 0],
+        [2, 2, 2, 2, 0],
+        [0, 0, 2, 2, 0],
+        [0, 0, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 2, 2, 0],
+        [0, 0, 2, 0, 0],
+        [0, 0, 2, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0, 0],
+        [2, 0, 0, 0, 0],
+        [0, 0, 2, 0, 0],
+        [0, 2, 0, 0, 0],
+        [2, 2, 0, 0, 0]
+      ],
+      [
+        [0, 0, 0, 0, 2],
+        [0, 0, 2, 0, 0],
+        [0, 0, 2, 2, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 2]
       ]
     ];
 
@@ -84,7 +118,7 @@
    	clickSpark.setParticleCount(5);
     clickSpark.setParticleImagePath('img/clickspark-square.png');
     clickSpark.setParticleRotationSpeed(12);
-    clickSpark.setAnimationType('falloff');
+    clickSpark.setAnimationType('explosion');
   	clickSpark.setParticleSize(12);
   	clickSpark.setParticleSpeed(8);
   	clickSpark.setParticleDuration(300);
@@ -142,9 +176,6 @@
 
       heroPosition = position;
 
-      //clickSpark.fireParticles($('.hero'));
-      //popSound.play();
-
       // Check if the hero fell into a hole
       if (tiles[position].hasClass('hole')) {
         restartLevel(); // Restart the current level
@@ -160,11 +191,13 @@
         // Check if all non-hole tiles are colored
         if (coloredTiles === totalTiles - $('.hole').length) {
           currentLevel++;
+          clickSpark.fireParticles($('.hero'));
+
           if (currentLevel > customGameboards.length) {
             currentLevel = 1; // Reset level to 1
           }
           setTimeout(function(){
-            levelCounter.text("Lvl: " + currentLevel + "/10");
+            levelCounter.text("Lvl: " + currentLevel + "/15");
             createCustomGameboard();
       		},200);
 
@@ -215,6 +248,40 @@
       }
     });
 
+    $("body").onSwipe(function(results){
+      if(results.up == true) {
+        var newPosition;
+        if (heroPosition >= 5) {
+          newPosition = heroPosition - 5;
+          moveHero(newPosition);
+        }
+      }
+
+      if(results.right == true) {
+        var newPosition;
+        if (heroPosition % 5 !== 4) {
+          newPosition = heroPosition + 1;
+          moveHero(newPosition);
+        }
+      }
+
+      if(results.down == true) {
+        var newPosition;
+        if (heroPosition < 20) {
+          newPosition = heroPosition + 5;
+          moveHero(newPosition);
+        }
+      }
+
+      if(results.left == true) {
+        var newPosition;
+        if (heroPosition % 5 !== 0) {
+          newPosition = heroPosition - 1;
+          moveHero(newPosition);
+        }
+      }
+    });
+
     function initGame() {
       $('#gameboard').hide();
       $('#level').hide();
@@ -222,7 +289,7 @@
 
     // Start the game when the start button is clicked
     $('#start-button').click(function() {
-      $('#gameboard').fadeIn(1500);
+      $('#gameboard').fadeIn(1500)
       $('#level').fadeIn(1500);
       $('#game-title').hide();
       $('#how-to-play').hide();
