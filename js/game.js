@@ -241,7 +241,7 @@
             currentLevel = 1; // Reset level to 1
           }
           setTimeout(function(){
-            levelCounter.text("Lvl: " + currentLevel + "/29");
+            levelCounter.text("Lvl: " + currentLevel + "/20");
             createCustomGameboard();
       		},200);
 
