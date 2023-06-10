@@ -7,111 +7,155 @@
     var totalTiles = 25;
     var coloredTiles = 0;
     var customGameboards = [
+      /*
       [
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0]
+      ],
+      */
+      [// Level 1
         [0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0],
         [0, 0, 0, 0, 2]
       ],
-      [
+      [// Level 2
         [0, 0, 0, 0, 0],
         [2, 2, 0, 0, 0],
         [0, 0, 0, 0, 0],
         [0, 0, 0, 2, 0],
         [0, 0, 0, 0, 0]
       ],
-      [
+      [// Level 3
         [0, 0, 0, 0, 2],
         [2, 0, 0, 0, 0],
         [2, 0, 0, 0, 0],
         [2, 0, 0, 0, 0],
         [0, 0, 0, 0, 0]
       ],
-      [
+      [// Level 4
         [0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0],
         [0, 0, 2, 0, 0],
         [0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0]
       ],
-      [
+      [// Level 5
         [0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0],
         [0, 2, 2, 2, 0],
         [0, 0, 0, 0, 0],
         [0, 0, 0, 0, 2]
       ],
-      [
+      [// Level 6
         [0, 0, 0, 0, 0],
         [0, 2, 0, 0, 0],
         [0, 2, 0, 0, 0],
         [0, 2, 0, 0, 0],
         [0, 0, 0, 0, 0]
       ],
-      [
+      [// Level 7
         [0, 2, 0, 0, 0],
         [0, 2, 0, 2, 0],
         [0, 2, 0, 2, 0],
         [0, 2, 0, 2, 0],
         [0, 0, 0, 0, 0]
       ],
-      [
+      [// Level 8
         [0, 0, 0, 0, 2],
         [0, 0, 2, 0, 0],
         [0, 2, 2, 2, 0],
         [0, 0, 2, 0, 0],
         [2, 0, 0, 0, 2]
       ],
-      [
+      [// Level 9
         [0, 2, 2, 0, 0],
         [0, 0, 2, 0, 0],
         [0, 0, 2, 0, 0],
         [0, 2, 2, 0, 0],
         [0, 0, 0, 0, 0]
       ],
-      [
+      [// Level 10
         [0, 0, 0, 0, 0],
         [0, 0, 2, 2, 0],
         [0, 0, 2, 2, 0],
         [0, 0, 0, 0, 0],
         [0, 0, 0, 0, 2]
       ],
-      [
+      [// Level 11
         [0, 0, 0, 0, 0],
         [0, 2, 2, 2, 0],
         [0, 2, 2, 2, 0],
         [0, 2, 2, 2, 0],
         [0, 0, 0, 0, 0]
       ],
-      [
+      [// Level 12
         [0, 0, 0, 0, 2],
         [0, 0, 2, 0, 0],
         [2, 2, 2, 2, 0],
         [0, 0, 2, 2, 0],
         [0, 0, 0, 0, 0]
       ],
-      [
+      [// Level 13
         [0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0],
         [0, 0, 2, 2, 0],
         [0, 0, 2, 0, 0],
         [0, 0, 2, 0, 0]
       ],
-      [
+      [// Level 14
         [0, 0, 0, 0, 0],
         [2, 0, 0, 0, 0],
         [0, 0, 2, 0, 0],
         [0, 2, 0, 0, 0],
         [2, 2, 0, 0, 0]
       ],
-      [
+      [// Level 15
         [0, 0, 0, 0, 2],
         [0, 0, 2, 0, 0],
         [0, 0, 2, 2, 0],
         [0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 2]
-      ]
+        [0, 2, 0, 0, 2]
+      ],
+      [// Level 16
+        [0, 0, 0, 0, 0],
+        [2, 2, 2, 2, 0],
+        [0, 0, 0, 2, 0],
+        [0, 2, 2, 2, 0],
+        [0, 0, 0, 0, 0]
+      ],
+      [// Level 17
+        [0, 0, 2, 2, 2],
+        [0, 0, 0, 2, 2],
+        [0, 0, 0, 0, 2],
+        [2, 0, 0, 0, 0],
+        [2, 2, 0, 0, 0]
+      ],
+      [// Level 18
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0],
+        [2, 2, 2, 2, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0]
+      ],
+      [// Level 19
+        [0, 0, 0, 0, 0],
+        [2, 0, 0, 0, 0],
+        [2, 0, 0, 0, 0],
+        [2, 2, 0, 0, 2],
+        [2, 2, 0, 0, 2]
+      ],
+      [// Level 20
+        [0, 0, 0, 0, 0],
+        [0, 0, 2, 2, 0],
+        [0, 0, 0, 0, 0],
+        [0, 0, 2, 0, 0],
+        [0, 0, 2, 2, 2]
+      ],
     ];
 
     // Clickspark
@@ -197,7 +241,7 @@
             currentLevel = 1; // Reset level to 1
           }
           setTimeout(function(){
-            levelCounter.text("Lvl: " + currentLevel + "/15");
+            levelCounter.text("Lvl: " + currentLevel + "/29");
             createCustomGameboard();
       		},200);
 
@@ -248,40 +292,6 @@
       }
     });
 
-    $("body").onSwipe(function(results){
-      if(results.up == true) {
-        var newPosition;
-        if (heroPosition >= 5) {
-          newPosition = heroPosition - 5;
-          moveHero(newPosition);
-        }
-      }
-
-      if(results.right == true) {
-        var newPosition;
-        if (heroPosition % 5 !== 4) {
-          newPosition = heroPosition + 1;
-          moveHero(newPosition);
-        }
-      }
-
-      if(results.down == true) {
-        var newPosition;
-        if (heroPosition < 20) {
-          newPosition = heroPosition + 5;
-          moveHero(newPosition);
-        }
-      }
-
-      if(results.left == true) {
-        var newPosition;
-        if (heroPosition % 5 !== 0) {
-          newPosition = heroPosition - 1;
-          moveHero(newPosition);
-        }
-      }
-    });
-
     function initGame() {
       $('#gameboard').hide();
       $('#level').hide();
@@ -289,7 +299,7 @@
 
     // Start the game when the start button is clicked
     $('#start-button').click(function() {
-      $('#gameboard').fadeIn(1500)
+      $('#gameboard').fadeIn(1500);
       $('#level').fadeIn(1500);
       $('#game-title').hide();
       $('#how-to-play').hide();
