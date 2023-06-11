@@ -1,6 +1,6 @@
   $(document).ready(function() {
     var gameboard = $('#gameboard');
-    var levelCounter = $('#level');
+    var levelCounter = $('#level span');
     var currentLevel = 1;
     var tiles = [];
     var heroPosition = 0;
@@ -457,7 +457,7 @@
             currentLevel = 1; // Reset level to 1
           }
           setTimeout(function(){
-            levelCounter.text("Lvl: " + currentLevel + "/50");
+            levelCounter.text(currentLevel);
             createCustomGameboard();
       		},200);
 
