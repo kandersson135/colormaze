@@ -81,8 +81,9 @@ body {
 
 .hero {background-color: #c3195d !important;}
 
-.hole {
-  background-color: rgba(47, 47, 46, 0.1);
+.hole,
+.troll {
+  background-color: rgba(47, 47, 46, 0.1) !important;
   box-shadow: inset 0 0 0 20px rgba(47, 47, 46, 0.1);
 }
 
