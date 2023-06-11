@@ -384,7 +384,7 @@
       gameboard.empty();
       tiles = [];
       coloredTiles = 0;
-      
+
       // Reset timer
       resetTimer();
 
@@ -398,7 +398,6 @@
       // Set hero position
       heroPosition = 0;
       tiles[heroPosition].addClass('hero');
-      //tiles[heroPosition].css('background-color', tileBackgroundColor());
 
       // Color the first tile
       tiles[heroPosition].addClass('colored');
@@ -416,7 +415,6 @@
           } else if (currentGameboard[row][col] === 2) {
             var holePosition = row * 5 + col;
             tiles[holePosition].addClass('hole');
-            //tiles[holePosition].css('background-color', getRandomColor());
           } else if (currentGameboard[row][col] === 3) {
             var trollPosition = row * 5 + col;
             tiles[trollPosition].addClass('troll');
@@ -447,7 +445,7 @@
       // Color the tile if not already colored
       if (!tiles[position].hasClass('colored')) {
         tiles[position].addClass('colored');
-        //tiles[position].css('background-color', tileBackgroundColor());
+
         coloredTiles++;
 
         // Check if all non-hole tiles are colored
@@ -477,7 +475,7 @@
 
       createCustomGameboard();
     }
-    
+
       // Function to reset the timer
      function resetTimer() {
        clearInterval(timerInterval);
