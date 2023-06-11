@@ -327,6 +327,37 @@
       }
     });
 
+    $("body").onSwipe(function(results){
+      if(results.up == true) {
+        if (heroPosition >= 5) {
+          newPosition = heroPosition - 5;
+          moveHero(newPosition);
+        }
+      }
+
+      if(results.right == true) {
+        if (heroPosition % 5 !== 4) {
+          newPosition = heroPosition + 1;
+          moveHero(newPosition);
+        }
+      }
+
+      if(results.down == true) {
+        if (heroPosition < 20) {
+          newPosition = heroPosition + 5;
+          moveHero(newPosition);
+        }
+      }
+
+      if(results.left == true) {
+        if (heroPosition % 5 !== 0) {
+          newPosition = heroPosition - 1;
+          moveHero(newPosition);
+        }
+      }
+
+    });
+
     function initGame() {
       $('#gameboard').hide();
       $('#level').hide();
