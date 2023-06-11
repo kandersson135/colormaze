@@ -327,7 +327,7 @@
       }
     });
 
-    $("body").onSwipe(function(results){
+    $("html").onSwipe(function(results){
       if(results.up == true) {
         if (heroPosition >= 5) {
           newPosition = heroPosition - 5;
