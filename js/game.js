@@ -363,7 +363,7 @@
       ],
       [// Level 50
         [0, 0, 0, 0, 0],
-        [0, 2, 2, 2, 0],
+        [0, 3, 3, 2, 0],
         [0, 2, 0, 2, 0],
         [0, 2, 2, 2, 0],
         [0, 0, 0, 0, 0]
@@ -417,6 +417,9 @@
             var holePosition = row * 5 + col;
             tiles[holePosition].addClass('hole');
             //tiles[holePosition].css('background-color', getRandomColor());
+          } else if (currentGameboard[row][col] === 3) {
+            var trollPosition = row * 5 + col;
+            tiles[trollPosition].addClass('troll');
           }
         }
       }
