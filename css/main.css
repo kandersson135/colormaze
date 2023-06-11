@@ -53,6 +53,14 @@ body {
   text-align: center;
 }
 
+#timer {
+  color: #333;
+  font-size: 32px;
+  font-weight: 700;
+  margin-top: 10px;
+  text-align: center;
+}
+
 #how-to-play {
   margin: 0 auto;
   margin-top: 50px;
