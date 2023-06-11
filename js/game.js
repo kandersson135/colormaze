@@ -575,12 +575,14 @@
     function initGame() {
       $('#gameboard').hide();
       $('#level').hide();
+      $('#timer').hide();
     }
 
     // Start the game when the start button is clicked
     $('#start-button').click(function() {
       $('#gameboard').fadeIn(1500);
       $('#level').fadeIn(1500);
+      $('#timer').fadeIn(1500);
       $('#game-title').hide();
       $('#how-to-play').hide();
       createCustomGameboard();
@@ -588,8 +590,8 @@
       $(this).hide();
     });
 
-    //initGame();
+    initGame();
 
     // Start the custom game
-    createCustomGameboard();
+    //createCustomGameboard();
   });
