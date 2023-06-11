@@ -6,6 +6,8 @@
     var heroPosition = 0;
     var totalTiles = 25;
     var coloredTiles = 0;
+    var timerInterval;
+    var timeRemaining = 10;
     var customGameboards = [
       /*
       [
@@ -382,6 +384,9 @@
       gameboard.empty();
       tiles = [];
       coloredTiles = 0;
+      
+      // Reset timer
+      resetTimer();
 
       // Generate tiles
       for (var i = 0; i < totalTiles; i++) {
@@ -469,6 +474,37 @@
 
       createCustomGameboard();
     }
+    
+      // Function to reset the timer
+     function resetTimer() {
+       clearInterval(timerInterval);
+       timeRemaining = 10;
+       updateTimerDisplay();
+       startTimer();
+     }
+
+      // Function to start the timer
+      function startTimer() {
+        updateTimerDisplay();
+
+        // Start the countdown interval
+        timerInterval = setInterval(function() {
+          timeRemaining--; // Decrease the time remaining
+          updateTimerDisplay(); // Update the timer display
+
+          if (timeRemaining <= 0) {
+            // Time's up, restart the level
+            clearInterval(timerInterval); // Clear the interval
+            restartLevel(); // Restart the current level
+          }
+        }, 1000); // Run the interval every 1 second (1000 milliseconds)
+      }
+
+      // Function to update the timer display
+      function updateTimerDisplay() {
+        var timerElement = $('#timer span');
+        timerElement.text(timeRemaining);
+      }
 
     // Handle keyboard events
     $(document).keydown(function(e) {
