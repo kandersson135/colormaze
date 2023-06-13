@@ -73,7 +73,12 @@
       if (g1 === null) {
         $('#g1').text(0);
       } else {
-        $('#g1').text(g1);
+        if (g1 === 10) {
+          $('#g1').text(g1);
+          $('#g1').parent().parent().addClass('completed');
+        } else {
+          $('#g1').text(g1);
+        }
       }
 
       if (g2 === null) {
