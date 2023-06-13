@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var gameboard = $('#gameboard');
   var levelCounter = $('#level span');
-  var g4 = localStorage.getItem("g6");
+  var g6 = localStorage.getItem("g6");
   var success = new Audio('audio/success.mp3');
   var fail = new Audio('audio/fail.mp3');
   var ticktock = new Audio('audio/ticktock.wav');
