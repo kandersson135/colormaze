@@ -46,4 +46,15 @@ $(document).ready(function() {
   } else {
     $('#g6').text(g6);
   }
+
+  // Reset game button click
+  $('#reset-button').click(function() {
+    localStorage.removeItem("g1");
+    localStorage.removeItem("g2");
+    localStorage.removeItem("g3");
+    localStorage.removeItem("g4");
+    localStorage.removeItem("g5");
+    localStorage.removeItem("g6");
+  	location.reload();
+  });
 });
