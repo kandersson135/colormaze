@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Color Maze</title>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="theme-color" content="#eeeeee">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="mobile-web-app-capable" content="yes">
+
+  <link rel="apple-touch-icon" href="img/webapp-icon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+
+  <!-- css -->
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <style>
+    html {
+      overflow: hidden;
+      overscroll-behavior: none;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="game-title">Color Maze</h1>
+  <a href="#" id="start-button">Start game</a>
+  <div id="how-to-play">
+    <p>
+      Game instructions:<br><br>
+      Color Maze is an exciting puzzle game where you control a character through a maze. The goal is to color all the tiles by guiding the character over them. But be careful! There are holes in the ground that you must avoid, otherwise you'll have to start over. The character can only move in four directions: up, down, left, and right. Each time you complete a level, a new maze is generated for you to explore.
+    </p>
+  </div>
+
+  <div id="level">Lvl: <span>1</span>/50</div>
+  <div id="gameboard"></div>
+  <div id="timer">TIME: <span>10</span>s</div>
+
+  <!-- js -->
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/swipe.js"></script>
+  <script src="js/clickspark.min.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 body {
   background:#fff url(../img/light-wool.png);
@@ -19,8 +20,9 @@ body {
 
 #game-title {
   color: #333;
+  font-family: 'Pacifico', cursive;
   font-size: 48px;
-  font-weight: 800;
+  font-weight: 400;
   text-align: center;
 }
 
@@ -79,18 +81,127 @@ body {
   /*border: 1px solid rgba(50, 50, 50, 0.3);*/
 }
 
-.hero {background-color: #c3195d !important;}
-
 .hole,
 .troll {
   background-color: rgba(47, 47, 46, 0.1);
   box-shadow: inset 0 0 0 20px rgba(47, 47, 46, 0.1);
 }
 
-.colored {background-color: #f70776;}
-
 /* shake animation */
 .shake {animation: shake 0.3s; animation-iteration-count: 1;}
+
+/* version info */
+#version-info {
+  bottom: 0px;
+  color: #666;
+  font-size: 8px;
+  position: absolute;
+}
+
+/* levels */
+#levels {
+  margin: 0 auto;
+  margin-top: 80px;
+  text-align: center;
+  width: 650px;
+}
+
+#levels .one-third {
+  background: rgba(255, 255, 255, 0.5);
+  border: 2px dotted rgba(0, 0, 0, 0.6);
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  box-shadow: 3px 3px 0 3px rgba(0, 0, 0, 0.1);
+  display: block;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding: 20px 0 0 0;
+  width: 30%;
+  transition-duration: 0.5s;
+}
+
+#levels .one-third:nth-child(1):hover {background: rgba(243, 209, 221, 0.4);}
+#levels .one-third:nth-child(2):hover {background: rgba(71, 183, 220, 0.2);}
+#levels .one-third:nth-child(3):hover {background: rgba(142, 211, 153, 0.3);}
+#levels .one-third:nth-child(5):hover {background: rgba(247, 222, 58, 0.2);}
+#levels .one-third:nth-child(6):hover {background: rgba(189, 134, 210, 0.2);}
+#levels .one-third:nth-child(7):hover {background: rgba(254, 169, 72, 0.2);}
+
+#levels .one-third a {
+  color: #444;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+#levels .one-third:active {
+  box-shadow: none;
+  position: relative;
+  left: 3px;
+  top: 3px;
+  transition-duration: 0s;
+}
+
+#levels .one-third p {
+  color: #555;
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 0px;
+}
+
+/* menu */
+#menu {
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 290px;
+}
+
+#menu li {
+  display: inline-block;
+  list-style-type: none;
+  margin-right: 20px;
+}
+
+#menu li a {
+  color: #aaa;
+  font-weight: 300;
+  text-decoration: none;
+}
+
+#back-btn {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+
+#back-btn a {
+  color: #333;
+  font-size: 32px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#back-btn a:active {
+  position: relative;
+  top: 3px;
+}
+
+/* SPACER */
+div.spacer {clear:both; display:block; height:10px;}
+
+/* COLUMNS */
+.one-half {width:48%;}
+.one-third {width:30.66%;}
+.two-third {width:65.33%;}
+.one-fourth {width:22%;}
+.three-fourth {width:74%;}
+.one-fifth {width:16.8%;}
+.two-fifth {width:37.6%;}
+.three-fifth {width:58.4%;}
+.four-fifth {width:67.2%;}
+.one-sixth {width:13.33%;}
+.five-sixth {width:82.67%;}
+.one-half, .one-third, .two-third, .three-fourth, .one-fourth, .one-fifth, .two-fifth, .three-fifth, .four-fifth, .one-sixth, .five-sixth {position:relative; margin-right:4%; float:left;}
+.last {margin-right:0 !important; clear:right;}
 
 /* animations */
 @keyframes shake {
