@@ -183,13 +183,13 @@ $(document).ready(function() {
 
         clickSpark.fireParticles($('.hero'));
 
-        // Save current level to localstorage
-        localStorage.setItem("g1", currentLevel);
-
         if (currentLevel > customGameboards.length) {
           localStorage.setItem("g1", 10);
           window.location = "index.html";
+        } else {
+          localStorage.setItem("g1", currentLevel);
         }
+        
         setTimeout(function(){
           levelCounter.text(currentLevel);
           createCustomGameboard();
