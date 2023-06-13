@@ -20,31 +20,56 @@ $(document).ready(function() {
   if (g2 === null) {
     $('#g2').text(0);
   } else {
-    $('#g2').text(g2);
+    if (g2 === 10) {
+      $('#g2').text(g2);
+      $('#g2').parent().parent().addClass('completed');
+    } else {
+      $('#g2').text(g2);
+    }
   }
 
   if (g3 === null) {
     $('#g3').text(0);
   } else {
-    $('#g3').text(g3);
+    if (g3 === 10) {
+      $('#g3').text(g3);
+      $('#g3').parent().parent().addClass('completed');
+    } else {
+      $('#g3').text(g3);
+    }
   }
 
   if (g4 === null) {
     $('#g4').text(0);
   } else {
-    $('#g4').text(g4);
+    if (g4 === 10) {
+      $('#g4').text(g4);
+      $('#g4').parent().parent().addClass('completed');
+    } else {
+      $('#g4').text(g4);
+    }
   }
 
   if (g5 === null) {
     $('#g5').text(0);
   } else {
-    $('#g5').text(g5);
+    if (g5 === 10) {
+      $('#g5').text(g5);
+      $('#g5').parent().parent().addClass('completed');
+    } else {
+      $('#g5').text(g5);
+    }
   }
 
   if (g6 === null) {
     $('#g6').text(0);
   } else {
-    $('#g6').text(g6);
+    if (g6 === 10) {
+      $('#g6').text(g6);
+      $('#g6').parent().parent().addClass('completed');
+    } else {
+      $('#g6').text(g6);
+    }
   }
 
   // Reset game button click

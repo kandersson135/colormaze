@@ -128,7 +128,7 @@ body {
 #levels .one-third:nth-child(6):hover {background: rgba(189, 134, 210, 0.2);}
 #levels .one-third:nth-child(7):hover {background: rgba(254, 169, 72, 0.2);}
 
-.completed {border-style: solid;}
+.completed {border: 2px solid rgba(0, 0, 0, 0.6) !important;}
 
 #levels .one-third a {
   color: #444;
