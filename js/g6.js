@@ -1,6 +1,7 @@
 $(document).ready(function() {
   var gameboard = $('#gameboard');
   var levelCounter = $('#level span');
+  var g4 = localStorage.getItem("g6");
   var success = new Audio('audio/success.mp3');
   var fail = new Audio('audio/fail.mp3');
   var ticktock = new Audio('audio/ticktock.wav');
@@ -87,6 +88,13 @@ $(document).ready(function() {
     ]
   ];
 
+  if (g6 === null) {
+    currentLevel = 1;
+  } else {
+    currentLevel = g6;
+    levelCounter.text(currentLevel);
+  }
+
   // Clickspark
   clickSpark.setParticleCount(5);
   clickSpark.setParticleImagePath('img/clickspark-orange.png');
@@ -115,6 +123,9 @@ $(document).ready(function() {
     // Set hero position
     heroPosition = 0;
     tiles[heroPosition].addClass('hero');
+
+    // Save current level to localstorage
+    localStorage.setItem("g6", currentLevel);
 
     // Color the first tile
     tiles[heroPosition].addClass('colored');

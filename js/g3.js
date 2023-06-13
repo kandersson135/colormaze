@@ -1,6 +1,7 @@
 $(document).ready(function() {
   var gameboard = $('#gameboard');
   var levelCounter = $('#level span');
+  var g3 = localStorage.getItem("g3");
   var success = new Audio('audio/success.mp3');
   var fail = new Audio('audio/fail.mp3');
   var ticktock = new Audio('audio/ticktock.wav');
@@ -86,6 +87,13 @@ $(document).ready(function() {
       [2, 0, 0, 0, 2]
     ]
   ];
+
+  if (g3 === null) {
+    currentLevel = 1;
+  } else {
+    currentLevel = g3;
+    levelCounter.text(currentLevel);
+  }
 
   // Clickspark
   clickSpark.setParticleCount(5);
@@ -174,6 +182,9 @@ $(document).ready(function() {
         ticktock.currentTime = 0;
 
         clickSpark.fireParticles($('.hero'));
+
+        // Save current level to localstorage
+        localStorage.setItem("g3", currentLevel);
 
         if (currentLevel > customGameboards.length) {
           //currentLevel = 1; // Reset level to 1

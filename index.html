@@ -15,34 +15,34 @@
   <div id="levels">
     <div class="one-third">
       <a href="g1.html">1. Pink Paradise</a>
-      <p>0/10</p>
+      <p><span id="g1">0</span>/10</p>
     </div>
 
     <div class="one-third">
       <a href="g2.html">2. Blue Bay</a>
-      <p>0/10</p>
+      <p><span id="g2">0</span>/10</p>
     </div>
 
     <div class="one-third last">
       <a href="g3.html">3. Green Gardens</a>
-      <p>0/10</p>
+      <p><span id="g3">0</span>/10</p>
     </div>
 
     <div class="spacer"></div>
 
     <div class="one-third">
       <a href="g4.html">4. Yellow Peaks</a>
-      <p>0/10</p>
+      <p><span id="g4">0</span>/10</p>
     </div>
 
     <div class="one-third">
       <a href="g5.html">5. Purple Plains</a>
-      <p>0/10</p>
+      <p><span id="g5">0</span>/10</p>
     </div>
 
     <div class="one-third last">
       <a href="g6.html">6. Orange Oasis</a>
-      <p>0/10</p>
+      <p><span id="g6">0</span>/10</p>
     </div>
   </div><!-- end levels -->
 
@@ -61,5 +61,51 @@
   <!-- js -->
   <script src="js/jquery-3.6.0.min.js"></script>
   <script src="js/clickspark.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      var g1 = localStorage.getItem("g1");
+      var g2 = localStorage.getItem("g2");
+      var g3 = localStorage.getItem("g3");
+      var g4 = localStorage.getItem("g4");
+      var g5 = localStorage.getItem("g5");
+      var g6 = localStorage.getItem("g6");
+
+      if (g1 === null) {
+        $('#g1').text(0);
+      } else {
+        $('#g1').text(g1);
+      }
+
+      if (g2 === null) {
+        $('#g2').text(0);
+      } else {
+        $('#g2').text(g2);
+      }
+
+      if (g3 === null) {
+        $('#g3').text(0);
+      } else {
+        $('#g3').text(g3);
+      }
+
+      if (g4 === null) {
+        $('#g4').text(0);
+      } else {
+        $('#g4').text(g4);
+      }
+
+      if (g5 === null) {
+        $('#g5').text(0);
+      } else {
+        $('#g5').text(g5);
+      }
+
+      if (g6 === null) {
+        $('#g6').text(0);
+      } else {
+        $('#g6').text(g6);
+      }
+    });
+  </script>
 </body>
 </html>
