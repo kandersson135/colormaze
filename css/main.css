@@ -188,6 +188,42 @@ body {
   top: 3px;
 }
 
+/* MODAL BOX */
+.swal-modal {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  border-radius: 0px;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  box-shadow: 3px 3px 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.swal-title {
+  color:#444;
+  font-weight:600;
+  margin-top:-5px !important;
+}
+
+.swal-text {
+  color:#444;
+  font-size:18px;
+}
+
+.swal-button {
+	background:rgba(0, 0, 0, 0.8);
+  border:2px solid #fff;
+  border-radius: 0px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  color:#fff;
+  font-weight:normal;
+  font-size:18px;
+  padding:5px 20px;
+}
+.swal-button:focus {box-shadow:none;}
+.swal-button:hover {background:#000 !important;}
+.swal-button:active {background:#000; box-shadow:none; left:3px; position:relative; top:3px;}
+
 /* SPACER */
 div.spacer {clear:both; display:block; height:10px;}
 

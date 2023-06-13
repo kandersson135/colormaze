@@ -72,14 +72,31 @@ $(document).ready(function() {
     }
   }
 
+  $('#how-to-button').click(function() {
+    swal("Game instructions", "Color Maze is an exciting puzzle game where you control a character through a maze. The goal is to color all the tiles by guiding the character over them. But be careful! There are holes in the ground that you must avoid, otherwise you'll have to start over. \n\n The character can only move in four directions: up, down, left, and right. Each time you complete a level, a new maze is generated for you to explore.");
+  });
+
   // Reset game button click
   $('#reset-button').click(function() {
-    localStorage.removeItem("g1");
-    localStorage.removeItem("g2");
-    localStorage.removeItem("g3");
-    localStorage.removeItem("g4");
-    localStorage.removeItem("g5");
-    localStorage.removeItem("g6");
-  	location.reload();
+    swal({
+      title: "Reset Game?",
+      text: "Do you really want to reset the game?",
+      buttons: true,
+    })
+    .then((willReset) => {
+      if (willReset) {
+        localStorage.removeItem("g1");
+        localStorage.removeItem("g2");
+        localStorage.removeItem("g3");
+        localStorage.removeItem("g4");
+        localStorage.removeItem("g5");
+        localStorage.removeItem("g6");
+      	location.reload();
+      }
+    });
+  });
+
+  $('#credits-button').click(function() {
+    swal("Credits", "This game is created by Kim Andersson.");
   });
 });
