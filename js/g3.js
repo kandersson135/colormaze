@@ -1,6 +1,12 @@
 $(document).ready(function() {
   var gameboard = $('#gameboard');
   var levelCounter = $('#level span');
+  var success = new Audio('audio/success.mp3');
+  var fail = new Audio('audio/fail.mp3');
+  var ticktock = new Audio('audio/ticktock.wav');
+  success.volume = 0.3;
+  fail.volume = 0.3;
+  ticktock.volume = 0.3;
   var currentLevel = 1;
   var tiles = [];
   var heroPosition = 0;
