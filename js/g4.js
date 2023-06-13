@@ -124,9 +124,6 @@ $(document).ready(function() {
     heroPosition = 0;
     tiles[heroPosition].addClass('hero');
 
-    // Save current level to localstorage
-    localStorage.setItem("g4", currentLevel);
-
     // Color the first tile
     tiles[heroPosition].addClass('colored');
     coloredTiles++;
@@ -186,9 +183,11 @@ $(document).ready(function() {
 
         clickSpark.fireParticles($('.hero'));
 
+        // Save current level to localstorage
+        localStorage.setItem("g4", currentLevel);
+
         if (currentLevel > customGameboards.length) {
-          //currentLevel = 1; // Reset level to 1
-          //alert("All levels completed!");
+          localStorage.setItem("g4", 10);
           window.location = "index.html";
         }
         setTimeout(function(){

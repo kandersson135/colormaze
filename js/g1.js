@@ -187,8 +187,7 @@ $(document).ready(function() {
         localStorage.setItem("g1", currentLevel);
 
         if (currentLevel > customGameboards.length) {
-          //currentLevel = 1; // Reset level to 1
-          //alert("All levels completed!");
+          localStorage.setItem("g1", 10);
           window.location = "index.html";
         }
         setTimeout(function(){
