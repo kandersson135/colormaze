@@ -218,6 +218,11 @@ div.spacer {clear:both; display:block; height:10px;}
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
 @media (max-width: 768px) {
   #gameboard {
     width: 300px;

@@ -1,11 +1,12 @@
-$('#back-btn').hide();
-$('#gameboard').hide();
-$('#level').hide();
-$('#timer').hide();
-
 $(document).ready(function() {
   var gameboard = $('#gameboard');
   var levelCounter = $('#level span');
+  var success = new Audio('audio/success.mp3');
+  var fail = new Audio('audio/fail.mp3');
+  var ticktock = new Audio('audio/ticktock.wav');
+  success.volume = 0.3;
+  fail.volume = 0.3;
+  ticktock.volume = 0.3;
   var currentLevel = 1;
   var tiles = [];
   var heroPosition = 0;
@@ -167,6 +168,11 @@ $(document).ready(function() {
       // Check if all non-hole tiles are colored
       if (coloredTiles === totalTiles - $('.hole').length) {
         currentLevel++;
+
+        success.play();
+        ticktock.pause();
+        ticktock.currentTime = 0;
+        
         clickSpark.fireParticles($('.hero'));
 
         if (currentLevel > customGameboards.length) {
@@ -186,6 +192,10 @@ $(document).ready(function() {
   // Restart the current level
   function restartLevel() {
     $('#gameboard').addClass('shake');
+
+    fail.play();
+    ticktock.pause();
+    ticktock.currentTime = 0;
 
     setTimeout(function(){
       $('#gameboard').removeClass('shake');
@@ -210,6 +220,10 @@ $(document).ready(function() {
       timerInterval = setInterval(function() {
         timeRemaining--; // Decrease the time remaining
         updateTimerDisplay(); // Update the timer display
+
+        if (timeRemaining === 4) {
+          ticktock.play();
+        }
 
         if (timeRemaining <= 0) {
           // Time's up, restart the level
@@ -256,12 +270,6 @@ $(document).ready(function() {
         break;
     }
   });
-
-  $('#back-btn').fadeIn(1500);
-  $('#gameboard').fadeIn(1500);
-  $('#level').fadeIn(1500);
-  $('#timer').fadeIn(1500);
-
   // Start the custom game
   createCustomGameboard();
 });
