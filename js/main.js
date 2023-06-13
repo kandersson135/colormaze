@@ -9,7 +9,7 @@ $(document).ready(function() {
   if (g1 === null) {
     $('#g1').text(0);
   } else {
-    if (g1 === 10) {
+    if (parseInt(g1) === 10) {
       $('#g1').text(g1);
       $('#g1').parent().parent().addClass('completed');
     } else {
@@ -20,7 +20,7 @@ $(document).ready(function() {
   if (g2 === null) {
     $('#g2').text(0);
   } else {
-    if (g2 === 10) {
+    if (parseInt(g2) === 10) {
       $('#g2').text(g2);
       $('#g2').parent().parent().addClass('completed');
     } else {
@@ -31,7 +31,7 @@ $(document).ready(function() {
   if (g3 === null) {
     $('#g3').text(0);
   } else {
-    if (g3 === 10) {
+    if (parseInt(g3) === 10) {
       $('#g3').text(g3);
       $('#g3').parent().parent().addClass('completed');
     } else {
@@ -42,7 +42,7 @@ $(document).ready(function() {
   if (g4 === null) {
     $('#g4').text(0);
   } else {
-    if (g4 === 10) {
+    if (parseInt(g4) === 10) {
       $('#g4').text(g4);
       $('#g4').parent().parent().addClass('completed');
     } else {
@@ -53,7 +53,7 @@ $(document).ready(function() {
   if (g5 === null) {
     $('#g5').text(0);
   } else {
-    if (g5 === 10) {
+    if (parseInt(g5) === 10) {
       $('#g5').text(g5);
       $('#g5').parent().parent().addClass('completed');
     } else {
@@ -64,7 +64,7 @@ $(document).ready(function() {
   if (g6 === null) {
     $('#g6').text(0);
   } else {
-    if (g6 === 10) {
+    if (parseInt(g6) === 10) {
       $('#g6').text(g6);
       $('#g6').parent().parent().addClass('completed');
     } else {
