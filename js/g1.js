@@ -189,7 +189,7 @@ $(document).ready(function() {
         } else {
           localStorage.setItem("g1", currentLevel);
         }
-        
+
         setTimeout(function(){
           levelCounter.text(currentLevel);
           createCustomGameboard();
