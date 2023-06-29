@@ -82,7 +82,7 @@ $(document).ready(function() {
       $('#g7').text(g7);
       $('#g7').parent().parent().addClass('completed');
     } else {
-      $('#g6').text(g7);
+      $('#g7').text(g7);
     }
   }
 
