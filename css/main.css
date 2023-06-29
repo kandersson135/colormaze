@@ -89,9 +89,51 @@ body {
 }
 
 .fish {
-  background-image: url(../img/anchovy.png);
+  background-color: transparent;
+  border: 5px solid rgba(47, 47, 46, 0.2);
+  overflow: hidden;
+}
+
+.wave{
+  position:relative;
+  width:100%;
+  height:100%;
+  background:#4ED3F1;
+  border-radius:0;
+  box-shadow:inset 0 0 50px rgba(0,0,0,.5);
+  background-image: url(../img/fish.gif);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-position: 50% 70%;
+  background-size: 50%;
+}
+.wave:before,.wave:after{
+  content:'';
+  position:absolute;
+  width:160%;
+  height:160%;
+  top:0;
+  left:50%;
+  transform:translate(-50%,-75%);
+  background:#000;
+}
+.wave:before{
+  border-radius:45%;
+  background:rgba(241, 241, 241, 1);
+  animation: waves 5s linear infinite;
+}
+.wave:after{
+  border-radius: 40%;
+  background: rgba(241, 241, 241,.5);
+  animation: waves 10s linear infinite;
+}
+
+@keyframes waves {
+  0%{
+     transform:translate(-50%,-75%) rotate(0deg);
+  }
+  100%{
+     transform:translate(-50%,-75%) rotate(360deg);
+  }
 }
 
 /* shake animation */
