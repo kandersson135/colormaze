@@ -88,6 +88,12 @@ body {
   box-shadow: inset 0 0 0 20px rgba(47, 47, 46, 0.1);
 }
 
+.fish {
+  background-image: url(../img/anchovy.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 /* shake animation */
 .shake {animation: shake 0.3s; animation-iteration-count: 1;}
 
@@ -127,6 +133,9 @@ body {
 #levels .one-third:nth-child(5):hover {background: rgba(247, 222, 58, 0.2);}
 #levels .one-third:nth-child(6):hover {background: rgba(189, 134, 210, 0.2);}
 #levels .one-third:nth-child(7):hover {background: rgba(254, 169, 72, 0.2);}
+#levels .one-third:nth-child(9):hover {background: rgba(75, 86, 210, 0.2);}
+#levels .one-third:nth-child(10):hover {background: rgba(207, 10, 10, 0.2);}
+#levels .one-third:nth-child(11):hover {background: rgba(0, 0, 0, 0.2);}
 
 .completed {border: 2px solid rgba(0, 0, 0, 0.6) !important;}
 
@@ -266,5 +275,38 @@ div.spacer {clear:both; display:block; height:10px;}
   #gameboard {
     width: 300px;
     height: 300px;
+  }
+
+  #levels {
+    width: 300px;
+  }
+
+  #levels .one-third {
+    width: 100%;
+  }
+
+  #level {
+    font-size: 24px;
+  }
+
+  #back-btn {
+    top: 20px;
+    left: 20px;
+  }
+
+  #back-btn a {
+    font-size: 18px;
+  }
+
+  #timer {
+    font-size: 24px;
+  }
+
+  #menu {
+    margin-bottom: 20px;
+  }
+
+  #version-info {
+    display: none;
   }
 }
