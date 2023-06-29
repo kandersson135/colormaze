@@ -146,6 +146,7 @@ $(document).ready(function() {
         } else if (currentGameboard[row][col] === 4) {
           var fishPosition = row * 5 + col;
           tiles[fishPosition].addClass('fish');
+          tiles[fishPosition].append('<div class="wave"></div>');
         }
       }
     }
