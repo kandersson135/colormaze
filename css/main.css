@@ -110,7 +110,7 @@ body {
   margin: 0 auto;
   margin-top: 80px;
   text-align: center;
-  width: 650px;
+  width: 700px;
 }
 
 #levels .one-third {
@@ -287,15 +287,18 @@ div.spacer {clear:both; display:block; height:10px;}
 
   #level {
     font-size: 24px;
+    text-align: right;
+    margin-right: 25px;
+
   }
 
   #back-btn {
-    top: 20px;
-    left: 20px;
+    top: 40px;
+    left: 25px;
   }
 
   #back-btn a {
-    font-size: 18px;
+    font-size: 24px;
   }
 
   #timer {
