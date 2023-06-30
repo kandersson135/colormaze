@@ -8,6 +8,9 @@ $(document).ready(function() {
   var g7 = localStorage.getItem("g7");
   var g8 = localStorage.getItem("g8");
   var g9 = localStorage.getItem("g9");
+  var g10 = localStorage.getItem("g10");
+  var g11 = localStorage.getItem("g11");
+  var g12 = localStorage.getItem("g12");
 
   if (g1 === null) {
     $('#g1').text(0);
@@ -108,6 +111,39 @@ $(document).ready(function() {
     }
   }
 
+  if (g10 === null) {
+    $('#g10').text(0);
+  } else {
+    if (parseInt(g10) === 10) {
+      $('#g10').text(g10);
+      $('#g10').parent().parent().addClass('completed');
+    } else {
+      $('#g10').text(g10);
+    }
+  }
+
+  if (g11 === null) {
+    $('#g11').text(0);
+  } else {
+    if (parseInt(g11) === 10) {
+      $('#g11').text(g11);
+      $('#g11').parent().parent().addClass('completed');
+    } else {
+      $('#g11').text(g11);
+    }
+  }
+
+  if (g12 === null) {
+    $('#g12').text(0);
+  } else {
+    if (parseInt(g12) === 21) {
+      $('#g12').text(g12);
+      $('#g12').parent().parent().addClass('completed');
+    } else {
+      $('#g12').text(g12);
+    }
+  }
+
   $('#how-to-button').click(function() {
     swal("Game instructions", "Color Maze is an exciting puzzle game where you control a character through a maze. The goal is to color all the tiles by guiding the character over them. But be careful! There are obstacles that you must avoid, otherwise you'll have to start over. \n\n The character can only move in four directions: up, down, left, and right. Each time you complete a level, a new maze is generated for you to explore.");
   });
@@ -130,6 +166,9 @@ $(document).ready(function() {
         localStorage.removeItem("g7");
         localStorage.removeItem("g8");
         localStorage.removeItem("g9");
+        localStorage.removeItem("g10");
+        localStorage.removeItem("g11");
+        localStorage.removeItem("g12");
       	location.reload();
       }
     });
