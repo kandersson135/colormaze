@@ -17,99 +17,6 @@
   <style>
     .hero {background-color: #c3195d !important;}
     .colored {background-color: #f70776;}
-
-    html, body {
-      overscroll-behavior: none;
-    }
-
-    body {
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      #d-pad {
-        background: rgba(100, 100, 100, 0.1);
-        box-shadow: inset 2px 2px 5px 0 rgba(100, 100, 100, 0.1);
-        border-radius: 100px;
-        height: 150px;
-        left: 100px;
-        position: relative;
-        top: 100px;
-        width: 150px;
-      }
-
-      #d-up,
-      #d-left,
-      #d-right,
-      #d-down {
-        background: rgba(0, 0, 0, 0.6);
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        border-radius: 50px;
-        box-shadow: inset 2px 2px 2px 0 rgba(255, 255, 255, 0.1), 1px 1px 0px 0 rgba(0, 0, 0, 0.7);
-        color: #fff;
-        cursor: pointer;
-        font-size: 48px;
-        height: 50px;
-        left: 48px;
-        line-height: 40px;
-        position: relative;
-        text-align: center;
-        transition-duration: 0.1s;
-        top: 5px;
-        width: 50px;
-        user-select: none;
-      }
-
-      #d-left {
-        left: 6px;
-        top: -3px;
-      }
-
-      #d-right {
-        top: -53px;
-        left: 92px;
-      }
-
-      #d-down {
-        top: -63px;
-        transform: rotate(-90deg);
-      }
-
-      #d-up {
-        transform: rotate(-90deg);
-      }
-
-      #d-up:active {
-        position: relative;
-        box-shadow: none;
-        top: 6px;
-        left: 49px;
-      }
-
-      #d-left:active {
-        position: relative;
-        box-shadow: none;
-        top: -2px;
-        left: 7px;
-      }
-
-      #d-right:active {
-        position: relative;
-        box-shadow: none;
-        top: -52px;
-        left: 93px;
-      }
-
-      #d-down:active {
-        position: relative;
-        box-shadow: none;
-        top: -62px;
-        left: 49px;
-      }
   </style>
 </head>
 <body>
@@ -126,13 +33,12 @@
   </div>
 
   <div id="version-info">
-    <p>Version: 0.0.8</p>
+    <p>Version: 0.0.9</p>
   </div><!-- end version info -->
 
   <!-- js -->
   <script src="js/jquery-3.6.0.min.js"></script>
   <script src="js/clickspark.min.js"></script>
-  <script src="js/swipe.js"></script>
   <script src="js/g1.js"></script>
 </body>
 </html>

@@ -280,6 +280,36 @@ $(document).ready(function() {
         break;
     }
   });
+
+  // Handle button clicks
+  $('#d-left').click(function() {
+    if (heroPosition % 5 !== 0) {
+      var newPosition = heroPosition - 1;
+      moveHero(newPosition);
+    }
+  });
+
+  $('#d-up').click(function() {
+    if (heroPosition >= 5) {
+      var newPosition = heroPosition - 5;
+      moveHero(newPosition);
+    }
+  });
+
+  $('#d-right').click(function() {
+    if (heroPosition % 5 !== 4) {
+      var newPosition = heroPosition + 1;
+      moveHero(newPosition);
+    }
+  });
+
+  $('#d-down').click(function() {
+    if (heroPosition < 20) {
+      var newPosition = heroPosition + 5;
+      moveHero(newPosition);
+    }
+  });
+  
   // Start the custom game
   createCustomGameboard();
 });
