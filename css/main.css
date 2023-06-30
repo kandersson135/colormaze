@@ -94,7 +94,7 @@ body {
   overflow: hidden;
 }
 
-.wave{
+.wave {
   position:relative;
   width:100%;
   height:100%;
@@ -106,7 +106,8 @@ body {
   background-position: 50% 70%;
   background-size: 50%;
 }
-.wave:before,.wave:after{
+.wave:before,
+.wave:after {
   content:'';
   position:absolute;
   width:160%;
@@ -116,12 +117,12 @@ body {
   transform:translate(-50%,-75%);
   background:#000;
 }
-.wave:before{
+.wave:before {
   border-radius:45%;
   background:rgba(241, 241, 241, 1);
   animation: waves 5s linear infinite;
 }
-.wave:after{
+.wave:after {
   border-radius: 40%;
   background: rgba(241, 241, 241,.5);
   animation: waves 10s linear infinite;
@@ -152,10 +153,10 @@ body {
   margin: 0 auto;
   margin-top: 80px;
   text-align: center;
-  width: 700px;
+  width: 900px;
 }
 
-#levels .one-third {
+#levels .one-fourth {
   background: rgba(255, 255, 255, 0.5);
   border: 2px dotted rgba(0, 0, 0, 0.6);
   border-top-right-radius: 15px;
@@ -165,29 +166,29 @@ body {
   font-weight: 600;
   margin-bottom: 20px;
   padding: 20px 0 0 0;
-  width: 30%;
+  width: 21%;
   transition-duration: 0.5s;
 }
 
-#levels .one-third:nth-child(1):hover {background: rgba(243, 209, 221, 0.4);}
-#levels .one-third:nth-child(2):hover {background: rgba(71, 183, 220, 0.2);}
-#levels .one-third:nth-child(3):hover {background: rgba(142, 211, 153, 0.3);}
-#levels .one-third:nth-child(5):hover {background: rgba(247, 222, 58, 0.2);}
-#levels .one-third:nth-child(6):hover {background: rgba(189, 134, 210, 0.2);}
-#levels .one-third:nth-child(7):hover {background: rgba(254, 169, 72, 0.2);}
-#levels .one-third:nth-child(9):hover {background: rgba(75, 86, 210, 0.2);}
-#levels .one-third:nth-child(10):hover {background: rgba(207, 10, 10, 0.2);}
-#levels .one-third:nth-child(11):hover {background: rgba(0, 0, 0, 0.2);}
+#levels .one-fourth:nth-child(1):hover {background: rgba(243, 209, 221, 0.4);}
+#levels .one-fourth:nth-child(2):hover {background: rgba(71, 183, 220, 0.2);}
+#levels .one-fourth:nth-child(3):hover {background: rgba(142, 211, 153, 0.3);}
+#levels .one-fourth:nth-child(4):hover {background: rgba(247, 222, 58, 0.2);}
+#levels .one-fourth:nth-child(6):hover {background: rgba(189, 134, 210, 0.2);}
+#levels .one-fourth:nth-child(7):hover {background: rgba(254, 169, 72, 0.2);}
+#levels .one-fourth:nth-child(8):hover {background: rgba(75, 86, 210, 0.2);}
+#levels .one-fourth:nth-child(9):hover {background: rgba(207, 10, 10, 0.2);}
+#levels .one-fourth:nth-child(11):hover {background: rgba(0, 0, 0, 0.2);}
 
 .completed {border: 2px solid rgba(0, 0, 0, 0.6) !important;}
 
-#levels .one-third a {
+#levels .one-fourth a {
   color: #444;
   font-size: 20px;
   text-decoration: none;
 }
 
-#levels .one-third:active {
+#levels .one-fourth:active {
   box-shadow: none;
   position: relative;
   left: 3px;
@@ -195,7 +196,7 @@ body {
   transition-duration: 0s;
 }
 
-#levels .one-third p {
+#levels .one-fourth p {
   color: #555;
   font-size: 16px;
   font-weight: 400;
@@ -323,7 +324,7 @@ div.spacer {clear:both; display:block; height:10px;}
     width: 300px;
   }
 
-  #levels .one-third {
+  #levels .one-fourth {
     width: 100%;
   }
 
