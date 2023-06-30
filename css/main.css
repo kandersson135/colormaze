@@ -179,8 +179,16 @@ body {
 #levels .one-fourth:nth-child(8):hover {background: rgba(75, 86, 210, 0.2);}
 #levels .one-fourth:nth-child(9):hover {background: rgba(207, 10, 10, 0.2);}
 #levels .one-fourth:nth-child(11):hover {background: rgba(0, 0, 0, 0.2);}
+#levels .one-fourth:nth-child(12):hover {background: rgba(0, 178, 202, 0.2);}
+#levels .one-fourth:nth-child(13):hover {background: rgba(195, 112, 47, 0.2);}
+#levels .one-fourth:nth-child(14):hover {background: rgba(255, 119, 188, 0.2);}
 
 .completed {border: 2px solid rgba(0, 0, 0, 0.6) !important;}
+
+.locked {
+  background: rgba(200, 200, 200, 0.4) !important;
+  border: 2px dotted rgba(0, 0, 0, 0.2) !important;
+}
 
 #levels .one-fourth a {
   color: #444;
