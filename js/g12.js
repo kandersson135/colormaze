@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var gameboard = $('#gameboard');
   var levelCounter = $('#level span');
-  var g8 = localStorage.getItem("g8");
+  var g12 = localStorage.getItem("g12");
   var success = new Audio('audio/success.mp3');
   var fail = new Audio('audio/fail.mp3');
   var ticktock = new Audio('audio/ticktock.wav');
@@ -15,89 +15,166 @@ $(document).ready(function() {
   var coloredTiles = 0;
   var timerInterval;
   var timeRemaining = 10;
-  var customGameboards = [ // Level design by Ester
-    [// Level 71
-      [0, 0, 0, 0, 0],
-      [2, 2, 0, 0, 2],
-      [0, 0, 0, 0, 2],
-      [0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0]
-    ],
-    [// Level 72
-      [0, 2, 2, 0, 2],
-      [0, 2, 0, 0, 2],
-      [0, 2, 0, 0, 2],
-      [0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0]
-    ],
-    [// Level 73
-      [0, 0, 0, 0, 2],
-      [0, 0, 0, 0, 2],
-      [2, 2, 0, 2, 2],
-      [0, 0, 0, 2, 2],
-      [0, 0, 0, 0, 0]
-    ],
-    [// Level 74
-      [0, 0, 0, 0, 2],
-      [0, 0, 0, 0, 2],
-      [0, 2, 0, 0, 2],
-      [0, 2, 0, 0, 2],
-      [0, 0, 0, 0, 2]
-    ],
-    [// Level 75
-      [0, 0, 0, 0, 0],
-      [0, 0, 0, 2, 0],
-      [0, 2, 0, 2, 0],
-      [0, 0, 0, 0, 0],
-      [0, 0, 2, 2, 2]
-    ],
-    [// Level 76
-      [0, 0, 0, 2, 0],
-      [2, 2, 0, 2, 0],
-      [0, 0, 0, 2, 0],
-      [0, 2, 0, 0, 0],
-      [0, 0, 0, 2, 2]
-    ],
-    [// Level 77
-      [0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0],
+  var customGameboards = [ // Level design by Ebba B
+    [// Level 111
       [0, 0, 0, 0, 0],
       [0, 0, 2, 2, 0],
-      [2, 0, 0, 0, 0]
-    ],
-    [// Level 78
       [0, 0, 0, 0, 0],
-      [0, 0, 0, 2, 0],
-      [0, 2, 0, 2, 0],
-      [0, 2, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0]
+    ],
+    [// Level 112
+      [0, 0, 0, 0, 2],
+      [2, 2, 0, 0, 0],
+      [2, 0, 0, 0, 0],
+      [0, 0, 0, 0, 2],
       [0, 0, 0, 2, 2]
     ],
-    [// Level 79
+    [// Level 113
+      [0, 0, 0, 0, 0],
+      [0, 0, 2, 0, 0],
+      [0, 0, 2, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0]
+    ],
+    [// Level 114
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 2, 0, 0, 2],
+      [0, 0, 0, 0, 0]
+    ],
+    [// Level 115
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [2, 2, 2, 0, 0]
+    ],
+    [// Level 116
+      [0, 2, 0, 0, 0],
+      [0, 2, 0, 0, 0],
+      [0, 0, 2, 0, 0],
+      [2, 0, 0, 0, 0],
+      [2, 2, 0, 0, 2]
+    ],
+    [// Level 117
+      [0, 0, 0, 0, 2],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [2, 2, 0, 0, 0]
+    ],
+    [// Level 118
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0]
+    ],
+    [// Level 119
+      [0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0],
       [2, 0, 0, 0, 0],
-      [2, 0, 2, 0, 0],
-      [2, 0, 2, 0, 0],
-      [2, 0, 2, 0, 0]
+      [0, 0, 2, 0, 0],
+      [0, 0, 0, 0, 2]
     ],
-    [// Level 80
+    [// Level 120
+      [0, 2, 2, 2, 2],
+      [0, 2, 2, 2, 2],
+      [0, 2, 2, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0]
+    ],
+    [// Level 121
+      [0, 2, 2, 2, 2],
       [0, 0, 0, 0, 0],
       [0, 0, 2, 2, 0],
+      [0, 0, 2, 2, 0],
+      [0, 0, 0, 0, 0]
+    ],
+    [// Level 122
+      [0, 2, 2, 0, 0],
+      [0, 2, 0, 0, 0],
+      [0, 2, 0, 0, 0],
+      [0, 2, 0, 2, 2],
+      [0, 0, 0, 2, 2]
+    ],
+    [// Level 123
+      [0, 0, 0, 0, 0],
+      [2, 0, 0, 2, 0],
+      [0, 0, 0, 0, 0],
+      [0, 2, 2, 0, 0],
+      [0, 2, 2, 0, 0]
+    ],
+    [// Level 124
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 2],
+      [0, 0, 0, 0, 2],
+      [0, 0, 0, 0, 2]
+    ],
+    [// Level 125
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [2, 0, 0, 0, 0],
+      [2, 0, 0, 0, 0]
+    ],
+    [// Level 126
+      [0, 0, 0, 0, 0],
       [0, 0, 0, 2, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0]
+    ],
+    [// Level 127
+      [0, 0, 0, 0, 2],
+      [0, 0, 0, 0, 2],
+      [0, 2, 0, 0, 2],
+      [0, 2, 0, 0, 2],
+      [0, 0, 0, 0, 0]
+    ],
+    [// Level 128
       [0, 2, 2, 2, 0],
+      [0, 2, 2, 2, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0]
+    ],
+    [// Level 129
+      [0, 2, 0, 0, 2],
+      [0, 2, 0, 0, 2],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0]
+    ],
+    [// Level 130
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 2, 2, 2, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 2, 0, 0]
+    ],
+    [// Level 131
+      [0, 2, 3, 3, 0],
+      [0, 2, 0, 3, 0],
+      [0, 2, 2, 3, 0],
+      [0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0]
     ]
   ];
 
-  if (g8 === null) {
+  if (g12 === null) {
     currentLevel = 1;
   } else {
-    currentLevel = g8;
+    currentLevel = g12;
     levelCounter.text(currentLevel);
   }
 
   // Clickspark
   clickSpark.setParticleCount(5);
-  clickSpark.setParticleImagePath('img/clickspark-red.png');
+  clickSpark.setParticleImagePath('img/clickspark-bubblegum.png');
   clickSpark.setParticleRotationSpeed(12);
   clickSpark.setAnimationType('explosion');
   clickSpark.setParticleSize(12);
@@ -187,10 +264,10 @@ $(document).ready(function() {
         clickSpark.fireParticles($('.hero'));
 
         // Save current level to localstorage
-        localStorage.setItem("g8", currentLevel);
+        localStorage.setItem("g12", currentLevel);
 
         if (currentLevel > customGameboards.length) {
-          localStorage.setItem("g8", 10);
+          localStorage.setItem("g12", 21);
           window.location = "index.html";
         }
         setTimeout(function(){

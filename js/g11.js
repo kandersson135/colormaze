@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var gameboard = $('#gameboard');
   var levelCounter = $('#level span');
-  var g8 = localStorage.getItem("g8");
+  var g11 = localStorage.getItem("g11");
   var success = new Audio('audio/success.mp3');
   var fail = new Audio('audio/fail.mp3');
   var ticktock = new Audio('audio/ticktock.wav');
@@ -15,89 +15,89 @@ $(document).ready(function() {
   var coloredTiles = 0;
   var timerInterval;
   var timeRemaining = 10;
-  var customGameboards = [ // Level design by Ester
-    [// Level 71
-      [0, 0, 0, 0, 0],
-      [2, 2, 0, 0, 2],
+  var customGameboards = [ // Level design by Alva N
+    [// Level 101
+      [0, 2, 2, 2, 2],
       [0, 0, 0, 0, 2],
+      [2, 0, 2, 0, 2],
+      [2, 0, 0, 0, 2],
+      [2, 2, 2, 2, 2]
+    ],
+    [// Level 102
+      [0, 2, 2, 2, 2],
+      [0, 0, 0, 0, 0],
+      [0, 0, 2, 2, 2],
       [0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0]
     ],
-    [// Level 72
-      [0, 2, 2, 0, 2],
-      [0, 2, 0, 0, 2],
-      [0, 2, 0, 0, 2],
-      [0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0]
-    ],
-    [// Level 73
-      [0, 0, 0, 0, 2],
-      [0, 0, 0, 0, 2],
-      [2, 2, 0, 2, 2],
-      [0, 0, 0, 2, 2],
-      [0, 0, 0, 0, 0]
-    ],
-    [// Level 74
-      [0, 0, 0, 0, 2],
-      [0, 0, 0, 0, 2],
-      [0, 2, 0, 0, 2],
-      [0, 2, 0, 0, 2],
-      [0, 0, 0, 0, 2]
-    ],
-    [// Level 75
-      [0, 0, 0, 0, 0],
-      [0, 0, 0, 2, 0],
-      [0, 2, 0, 2, 0],
-      [0, 0, 0, 0, 0],
-      [0, 0, 2, 2, 2]
-    ],
-    [// Level 76
-      [0, 0, 0, 2, 0],
-      [2, 2, 0, 2, 0],
-      [0, 0, 0, 2, 0],
-      [0, 2, 0, 0, 0],
-      [0, 0, 0, 2, 2]
-    ],
-    [// Level 77
-      [0, 0, 0, 0, 0],
+    [// Level 103
       [0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0],
       [0, 0, 2, 2, 0],
-      [2, 0, 0, 0, 0]
-    ],
-    [// Level 78
-      [0, 0, 0, 0, 0],
       [0, 0, 0, 2, 0],
-      [0, 2, 0, 2, 0],
-      [0, 2, 0, 0, 0],
-      [0, 0, 0, 2, 2]
+      [0, 0, 0, 2, 0]
     ],
-    [// Level 79
+    [// Level 104
       [0, 0, 0, 0, 0],
+      [2, 2, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 2],
+      [2, 2, 0, 0, 2]
+    ],
+    [// Level 105
+      [0, 2, 0, 0, 0],
+      [0, 2, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [2, 0, 0, 2, 2],
+      [2, 0, 0, 2, 2]
+    ],
+    [// Level 106
+      [0, 0, 2, 0, 0],
+      [0, 0, 2, 2, 0],
+      [0, 2, 0, 0, 0],
+      [0, 2, 0, 0, 0],
+      [0, 0, 0, 0, 0]
+    ],
+    [// Level 107
+      [0, 2, 0, 0, 0],
+      [0, 2, 0, 2, 0],
+      [0, 2, 2, 0, 0],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0]
+    ],
+    [// Level 108
+      [0, 0, 0, 2, 2],
+      [2, 2, 0, 2, 2],
       [2, 0, 0, 0, 0],
       [2, 0, 2, 0, 0],
-      [2, 0, 2, 0, 0],
-      [2, 0, 2, 0, 0]
+      [2, 0, 0, 0, 0]
     ],
-    [// Level 80
-      [0, 0, 0, 0, 0],
-      [0, 0, 2, 2, 0],
+    [// Level 109
+      [0, 2, 0, 0, 2],
+      [0, 2, 0, 0, 0],
       [0, 0, 0, 2, 0],
-      [0, 2, 2, 2, 0],
+      [0, 0, 0, 0, 0],
       [0, 0, 0, 0, 0]
+    ],
+    [// Level 110
+      [0, 2, 2, 2, 2],
+      [0, 0, 0, 0, 0],
+      [2, 0, 3, 0, 0],
+      [2, 2, 2, 2, 2],
+      [2, 2, 2, 2, 2]
     ]
   ];
 
-  if (g8 === null) {
+  if (g11 === null) {
     currentLevel = 1;
   } else {
-    currentLevel = g8;
+    currentLevel = g11;
     levelCounter.text(currentLevel);
   }
 
   // Clickspark
   clickSpark.setParticleCount(5);
-  clickSpark.setParticleImagePath('img/clickspark-red.png');
+  clickSpark.setParticleImagePath('img/clickspark-beach.png');
   clickSpark.setParticleRotationSpeed(12);
   clickSpark.setAnimationType('explosion');
   clickSpark.setParticleSize(12);
@@ -187,10 +187,10 @@ $(document).ready(function() {
         clickSpark.fireParticles($('.hero'));
 
         // Save current level to localstorage
-        localStorage.setItem("g8", currentLevel);
+        localStorage.setItem("g11", currentLevel);
 
         if (currentLevel > customGameboards.length) {
-          localStorage.setItem("g8", 10);
+          localStorage.setItem("g11", 10);
           window.location = "index.html";
         }
         setTimeout(function(){

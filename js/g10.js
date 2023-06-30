@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var gameboard = $('#gameboard');
   var levelCounter = $('#level span');
-  var g8 = localStorage.getItem("g8");
+  var g10 = localStorage.getItem("g10");
   var success = new Audio('audio/success.mp3');
   var fail = new Audio('audio/fail.mp3');
   var ticktock = new Audio('audio/ticktock.wav');
@@ -15,89 +15,89 @@ $(document).ready(function() {
   var coloredTiles = 0;
   var timerInterval;
   var timeRemaining = 10;
-  var customGameboards = [ // Level design by Ester
-    [// Level 71
-      [0, 0, 0, 0, 0],
-      [2, 2, 0, 0, 2],
-      [0, 0, 0, 0, 2],
-      [0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0]
-    ],
-    [// Level 72
+  var customGameboards = [ // Level design by Alva N
+    [// Level 91
+      [0, 2, 0, 0, 2],
       [0, 2, 2, 0, 2],
-      [0, 2, 0, 0, 2],
-      [0, 2, 0, 0, 2],
-      [0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0]
+      [0, 2, 2, 0, 2],
+      [0, 0, 0, 0, 2],
+      [2, 2, 2, 2, 2]
     ],
-    [// Level 73
-      [0, 0, 0, 0, 2],
-      [0, 0, 0, 0, 2],
-      [2, 2, 0, 2, 2],
+    [// Level 92
+      [0, 0, 2, 0, 0],
+      [2, 0, 2, 0, 0],
+      [2, 0, 2, 0, 0],
+      [2, 0, 0, 0, 0],
+      [2, 2, 0, 0, 0]
+    ],
+    [// Level 93
+      [0, 0, 0, 0, 0],
+      [2, 2, 2, 0, 0],
+      [2, 0, 0, 0, 0],
+      [2, 0, 0, 0, 0],
+      [2, 0, 0, 0, 0]
+    ],
+    [// Level 94
+      [0, 0, 2, 2, 2],
+      [0, 0, 2, 2, 2],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0],
+      [2, 2, 2, 2, 2]
+    ],
+    [// Level 95
+      [0, 0, 2, 2, 2],
+      [2, 0, 0, 0, 2],
+      [2, 0, 2, 0, 2],
+      [2, 0, 0, 0, 2],
+      [2, 2, 2, 2, 2]
+    ],
+    [// Level 96
+      [0, 0, 2, 0, 2],
+      [2, 0, 0, 0, 2],
       [0, 0, 0, 2, 2],
+      [0, 2, 0, 0, 0],
       [0, 0, 0, 0, 0]
     ],
-    [// Level 74
-      [0, 0, 0, 0, 2],
-      [0, 0, 0, 0, 2],
-      [0, 2, 0, 0, 2],
-      [0, 2, 0, 0, 2],
-      [0, 0, 0, 0, 2]
-    ],
-    [// Level 75
-      [0, 0, 0, 0, 0],
-      [0, 0, 0, 2, 0],
-      [0, 2, 0, 2, 0],
-      [0, 0, 0, 0, 0],
-      [0, 0, 2, 2, 2]
-    ],
-    [// Level 76
+    [// Level 97
       [0, 0, 0, 2, 0],
       [2, 2, 0, 2, 0],
       [0, 0, 0, 2, 0],
-      [0, 2, 0, 0, 0],
-      [0, 0, 0, 2, 2]
-    ],
-    [// Level 77
-      [0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0],
-      [0, 0, 0, 0, 0],
-      [0, 0, 2, 2, 0],
-      [2, 0, 0, 0, 0]
-    ],
-    [// Level 78
-      [0, 0, 0, 0, 0],
       [0, 0, 0, 2, 0],
-      [0, 2, 0, 2, 0],
-      [0, 2, 0, 0, 0],
-      [0, 0, 0, 2, 2]
-    ],
-    [// Level 79
-      [0, 0, 0, 0, 0],
-      [2, 0, 0, 0, 0],
-      [2, 0, 2, 0, 0],
-      [2, 0, 2, 0, 0],
-      [2, 0, 2, 0, 0]
-    ],
-    [// Level 80
-      [0, 0, 0, 0, 0],
-      [0, 0, 2, 2, 0],
-      [0, 0, 0, 2, 0],
-      [0, 2, 2, 2, 0],
       [0, 0, 0, 0, 0]
+    ],
+    [// Level 98
+      [0, 0, 0, 0, 0],
+      [0, 0, 2, 0, 0],
+      [0, 0, 0, 0, 2],
+      [0, 0, 0, 0, 0],
+      [0, 0, 0, 0, 0]
+    ],
+    [// Level 99
+      [0, 0, 2, 2, 2],
+      [0, 0, 2, 2, 2],
+      [0, 0, 0, 0, 2],
+      [0, 0, 2, 2, 2],
+      [0, 0, 2, 2, 2]
+    ],
+    [// Level 100
+      [0, 0, 2, 2, 2],
+      [2, 0, 0, 0, 0],
+      [2, 2, 0, 0, 0],
+      [2, 2, 0, 0, 0],
+      [0, 3, 0, 0, 0]
     ]
   ];
 
-  if (g8 === null) {
+  if (g10 === null) {
     currentLevel = 1;
   } else {
-    currentLevel = g8;
+    currentLevel = g10;
     levelCounter.text(currentLevel);
   }
 
   // Clickspark
   clickSpark.setParticleCount(5);
-  clickSpark.setParticleImagePath('img/clickspark-red.png');
+  clickSpark.setParticleImagePath('img/clickspark-crystal.png');
   clickSpark.setParticleRotationSpeed(12);
   clickSpark.setAnimationType('explosion');
   clickSpark.setParticleSize(12);
@@ -187,10 +187,10 @@ $(document).ready(function() {
         clickSpark.fireParticles($('.hero'));
 
         // Save current level to localstorage
-        localStorage.setItem("g8", currentLevel);
+        localStorage.setItem("g10", currentLevel);
 
         if (currentLevel > customGameboards.length) {
-          localStorage.setItem("g8", 10);
+          localStorage.setItem("g10", 10);
           window.location = "index.html";
         }
         setTimeout(function(){
