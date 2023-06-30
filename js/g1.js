@@ -281,33 +281,32 @@ $(document).ready(function() {
     }
   });
 
-  $("html").onSwipe(function(results){
-    if(results.up == true) {
-      if (heroPosition >= 5) {
-        newPosition = heroPosition - 5;
-        moveHero(newPosition);
-      }
+  // Handle button clicks
+  $('#d-left').click(function() {
+    if (heroPosition % 5 !== 0) {
+      var newPosition = heroPosition - 1;
+      moveHero(newPosition);
     }
+  });
 
-    if(results.right == true) {
-      if (heroPosition % 5 !== 4) {
-        newPosition = heroPosition + 1;
-        moveHero(newPosition);
-      }
+  $('#d-up').click(function() {
+    if (heroPosition >= 5) {
+      var newPosition = heroPosition - 5;
+      moveHero(newPosition);
     }
+  });
 
-    if(results.down == true) {
-      if (heroPosition < 20) {
-        newPosition = heroPosition + 5;
-        moveHero(newPosition);
-      }
+  $('#d-right').click(function() {
+    if (heroPosition % 5 !== 4) {
+      var newPosition = heroPosition + 1;
+      moveHero(newPosition);
     }
+  });
 
-    if(results.left == true) {
-      if (heroPosition % 5 !== 0) {
-        newPosition = heroPosition - 1;
-        moveHero(newPosition);
-      }
+  $('#d-down').click(function() {
+    if (heroPosition < 20) {
+      var newPosition = heroPosition + 5;
+      moveHero(newPosition);
     }
   });
 
