@@ -254,24 +254,28 @@ $(document).ready(function() {
     var newPosition;
 
     switch (e.which) {
+      case 65: // A key
       case 37: // Left arrow
         if (heroPosition % 5 !== 0) {
           newPosition = heroPosition - 1;
           moveHero(newPosition);
         }
         break;
+      case 87: // W key
       case 38: // Up arrow
         if (heroPosition >= 5) {
           newPosition = heroPosition - 5;
           moveHero(newPosition);
         }
         break;
+      case 68: // D key
       case 39: // Right arrow
         if (heroPosition % 5 !== 4) {
           newPosition = heroPosition + 1;
           moveHero(newPosition);
         }
         break;
+      case 83: // S key
       case 40: // Down arrow
         if (heroPosition < 20) {
           newPosition = heroPosition + 5;
@@ -309,7 +313,7 @@ $(document).ready(function() {
       moveHero(newPosition);
     }
   });
-  
+
   // Start the custom game
   createCustomGameboard();
 });
