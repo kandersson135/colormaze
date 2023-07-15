@@ -144,6 +144,19 @@ $(document).ready(function() {
     }
   }
 
+  // Lock all levels except first one
+  var divs = $('.one-fourth:not(:first)');
+  divs.each(function(index) {
+    $(this).addClass('locked');
+  });
+
+  // Check if previous level is completed and unlock the next level
+  for (var i = 1; i <= 11; i++) {
+    if ($('#g' + i).text() == 10) {
+      $('#g' + i).parent().parent().nextAll('.one-fourth:first').removeClass('locked');
+    }
+  }
+
   $('#how-to-button').click(function() {
     swal("Game instructions", "Color Maze is an exciting puzzle game where you control a character through a maze. The goal is to color all the tiles by guiding the character over them. But be careful! There are obstacles that you must avoid, otherwise you'll have to start over. \n\n The character can only move in four directions: up, down, left, and right. Each time you complete a level, a new maze is generated for you to explore.");
   });

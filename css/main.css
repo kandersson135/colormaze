@@ -186,10 +186,7 @@ body {
 
 .completed {border: 2px solid rgba(0, 0, 0, 0.6) !important;}
 
-.locked {
-  background: rgba(200, 200, 200, 0.4) !important;
-  border: 2px dotted rgba(0, 0, 0, 0.2) !important;
-}
+.locked {opacity: 0.4; pointer-events: none;}
 
 #levels .one-fourth a {
   color: #444;
