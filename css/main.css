@@ -184,8 +184,7 @@ body {
 #levels .one-fourth:nth-child(13):hover {background: rgba(195, 112, 47, 0.2);}
 #levels .one-fourth:nth-child(14):hover {background: rgba(255, 119, 188, 0.2);}
 
-.completed {border: 2px solid rgba(0, 0, 0, 0.6) !important;}
-
+.completed {border: 2px solid rgba(0, 0, 0, 0.6) !important; pointer-events: none;}
 .locked {opacity: 0.4; pointer-events: none;}
 
 #levels .one-fourth a {
