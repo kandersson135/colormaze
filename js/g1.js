@@ -111,13 +111,12 @@ $(document).ready(function() {
     tiles = [];
     coloredTiles = 0;
 
-    // Reset timer
+    // Reset timer if timer is enabled
     if (timerEnabled === 'true') {
       resetTimer();
     } else {
       $('#timer').hide();
     }
-    //resetTimer();
 
     // Generate tiles
     for (var i = 0; i < totalTiles; i++) {

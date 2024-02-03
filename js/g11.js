@@ -2,6 +2,7 @@ $(document).ready(function() {
   var gameboard = $('#gameboard');
   var levelCounter = $('#level span');
   var g11 = localStorage.getItem("g11");
+  var timerEnabled = localStorage.getItem('timerEnabled');
   var success = new Audio('audio/success.mp3');
   var fail = new Audio('audio/fail.mp3');
   var ticktock = new Audio('audio/ticktock.wav');
@@ -110,8 +111,12 @@ $(document).ready(function() {
     tiles = [];
     coloredTiles = 0;
 
-    // Reset timer
-    resetTimer();
+    // Reset timer if timer is enabled
+    if (timerEnabled === 'true') {
+      resetTimer();
+    } else {
+      $('#timer').hide();
+    }
 
     // Generate tiles
     for (var i = 0; i < totalTiles; i++) {
