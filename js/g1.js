@@ -2,6 +2,7 @@ $(document).ready(function() {
   var gameboard = $('#gameboard');
   var levelCounter = $('#level span');
   var g1 = localStorage.getItem("g1");
+  var timerEnabled = localStorage.getItem('timerEnabled');
   var success = new Audio('audio/success.mp3');
   var fail = new Audio('audio/fail.mp3');
   var ticktock = new Audio('audio/ticktock.wav');
@@ -111,7 +112,12 @@ $(document).ready(function() {
     coloredTiles = 0;
 
     // Reset timer
-    resetTimer();
+    if (timerEnabled === 'true') {
+      resetTimer();
+    } else {
+      $('#timer').hide();
+    }
+    //resetTimer();
 
     // Generate tiles
     for (var i = 0; i < totalTiles; i++) {
@@ -214,40 +220,40 @@ $(document).ready(function() {
     createCustomGameboard();
   }
 
-    // Function to reset the timer
-   function resetTimer() {
-     clearInterval(timerInterval);
-     timeRemaining = 10;
-     updateTimerDisplay();
-     startTimer();
-   }
+  // Function to reset the timer
+  function resetTimer() {
+    clearInterval(timerInterval);
+    timeRemaining = 10;
+    updateTimerDisplay();
+    startTimer();
+  }
 
-    // Function to start the timer
-    function startTimer() {
-      updateTimerDisplay();
+  // Function to start the timer
+  function startTimer() {
+    updateTimerDisplay();
 
-      // Start the countdown interval
-      timerInterval = setInterval(function() {
-        timeRemaining--; // Decrease the time remaining
-        updateTimerDisplay(); // Update the timer display
+    // Start the countdown interval
+    timerInterval = setInterval(function() {
+      timeRemaining--; // Decrease the time remaining
+      updateTimerDisplay(); // Update the timer display
 
-        if (timeRemaining === 4) {
-          ticktock.play();
-        }
+      if (timeRemaining === 4) {
+        ticktock.play();
+      }
 
-        if (timeRemaining <= 0) {
-          // Time's up, restart the level
-          clearInterval(timerInterval); // Clear the interval
-          restartLevel(); // Restart the current level
-        }
-      }, 1000); // Run the interval every 1 second (1000 milliseconds)
-    }
+      if (timeRemaining <= 0) {
+        // Time's up, restart the level
+        clearInterval(timerInterval); // Clear the interval
+        restartLevel(); // Restart the current level
+      }
+    }, 1000); // Run the interval every 1 second (1000 milliseconds)
+  }
 
-    // Function to update the timer display
-    function updateTimerDisplay() {
-      var timerElement = $('#timer span');
-      timerElement.text(timeRemaining);
-    }
+  // Function to update the timer display
+  function updateTimerDisplay() {
+    var timerElement = $('#timer span');
+    timerElement.text(timeRemaining);
+  }
 
   // Handle keyboard events
   $(document).keydown(function(e) {
