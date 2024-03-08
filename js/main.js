@@ -199,6 +199,11 @@ $(document).ready(function() {
     });
   });
 
+  $('.one-fourth').click(function(){
+    var url = $(this).data('url');
+    window.location.href = url;
+  });
+
   $('#credits-button').click(function() {
     swal("Credits", "This game is created by Kim Andersson.\n\nSpecial thanks to Annie, Ester, Ebba and Alva for contributing with level designs.");
   });
