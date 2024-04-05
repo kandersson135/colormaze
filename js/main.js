@@ -207,4 +207,9 @@ $(document).ready(function() {
   $('#credits-button').click(function() {
     swal("Credits", "This game is created by Kim Andersson.\n\nSpecial thanks to Annie, Ester, Ebba and Alva for contributing with level designs.");
   });
+
+  //Disable right click
+	document.addEventListener("contextmenu", function (e) {
+		e.preventDefault();
+	}, false);
 });

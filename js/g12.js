@@ -399,6 +399,18 @@ $(document).ready(function() {
     }
   });
 
+  // Detect esc key press
+  $(document).keydown(function(e) {
+    if (e.keyCode == 27) { // Check if the pressed key is the escape key
+      window.location.href = "index.html"; // Navigate to index.html
+    }
+  });
+
+  //Disable right click
+	document.addEventListener("contextmenu", function (e) {
+		e.preventDefault();
+	}, false);
+
   // Start the custom game
   createCustomGameboard();
 });
