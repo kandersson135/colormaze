@@ -11,6 +11,7 @@ $(document).ready(function() {
   var g10 = localStorage.getItem("g10");
   var g11 = localStorage.getItem("g11");
   var g12 = localStorage.getItem("g12");
+  var currentYear = new Date().getFullYear();
 
   if (g1 === null) {
     $('#g1').text(0);
@@ -205,7 +206,7 @@ $(document).ready(function() {
   });
 
   $('#credits-button').click(function() {
-    swal("Credits", "This game is created by Kim Andersson.\n\nSpecial thanks to Annie, Ester, Ebba and Alva for contributing with level designs.");
+    swal("Credits © " + currentYear, "This game is created by Kim Andersson.\n\nSpecial thanks to Annie, Ester, Ebba and Alva for contributing with level designs.");
   });
 
   //Disable right click
