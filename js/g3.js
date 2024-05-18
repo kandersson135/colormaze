@@ -189,17 +189,30 @@ $(document).ready(function() {
         clickSpark.fireParticles($('.hero'));
 
         // Save current level to localstorage
-        localStorage.setItem("g3", currentLevel);
-
         if (currentLevel > customGameboards.length) {
           localStorage.setItem("g3", 10);
-          window.location = "index.html";
+          setTimeout(function(){
+            window.location = "index.html";
+          },800);
+        } else {
+          localStorage.setItem("g3", currentLevel);
         }
+
+        // Slide off and slide in gameboard
+        setTimeout(function(){
+          $('#gameboard').animate({ left: '+=50px' }, 200, function() {  // Bounce to the right
+            $(this).animate({ left: '-1000px' }, 500, function() {  // Slide to the left
+              // Reset position off-screen to the right
+              $(this).css('left', '1000px').animate({ left: '0' }, 500);  // Slide in from the right
+            });
+          });
+        },300);
+
+        // create new level
         setTimeout(function(){
           levelCounter.text(currentLevel);
           createCustomGameboard();
-        },200);
-
+        },1000); // },200);
       }
     }
   }
