@@ -261,8 +261,8 @@ body {
   display: none;
   height: 150px;
   left: 100px;
-  position: relative;
-  top: 100px;
+  position: absolute;
+  top: 500px;
   width: 150px;
 }
 
