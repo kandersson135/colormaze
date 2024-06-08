@@ -243,7 +243,7 @@ $(document).ready(function() {
     // Function to start the timer
     function startTimer() {
       updateTimerDisplay();
-z
+
       // Start the countdown interval
       timerInterval = setInterval(function() {
         timeRemaining--; // Decrease the time remaining
