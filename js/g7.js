@@ -336,9 +336,9 @@ $(document).ready(function() {
     }
   });
 
-  // Detect esc key press
+  // Detect backspace key press
   $(document).keydown(function(e) {
-    if (e.keyCode == 27) { // Check if the pressed key is the escape key
+    if (e.keyCode == 8) { // Check if the pressed key is the backspace key
       window.location.href = "index.html"; // Navigate to index.html
     }
   });
