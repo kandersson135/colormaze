@@ -35,27 +35,6 @@ body {
   text-align: center;
 }
 
-#start-button {
-  background-color: rgba(0, 0, 0, 0.8);
-  box-shadow: inset -2px -2px 0 2px rgba(255, 255, 255, 0.2);
-  color: #fff;
-  display: block;
-  font-size: 26px;
-  font-weight: 700;
-  margin: 0 auto;
-  padding: 15px 0;
-  text-align: center;
-  text-decoration: none;
-  width: 230px;
-}
-
-#start-button:active {
-  box-shadow: none;
-  position: relative;
-  left: 2px;
-  top: 2px;
-}
-
 #level {
   color: #333;
   font-size: 48px;
@@ -70,17 +49,6 @@ body {
   font-weight: 700;
   margin-top: 10px;
   text-align: center;
-}
-
-#how-to-play {
-  margin: 0 auto;
-  margin-top: 50px;
-  text-align: center;
-  width: 380px;
-}
-#how-to-play p {
-  color: #555;
-  font-weight: 600;
 }
 
 .tile {
@@ -219,7 +187,7 @@ body {
 /* menu */
 #menu {
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 30px;
   width: 290px;
 }
 
@@ -484,7 +452,7 @@ div.spacer {clear:both; display:block; height:10px;}
   }
 
   #levels .one-fourth {
-    width: 100%;
+    width: 95%;
   }
 
   #level {

@@ -14,9 +14,38 @@
 
   <!-- css -->
   <link rel="stylesheet" type="text/css" href="css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/slick.css"/>
   <style type="text/css">
     html {
       overflow: auto;
+    }
+
+    .slideshow {
+      /* margin-top: -40px; */
+    }
+
+    .slick-dots {
+      list-style-type: none;
+      position: relative;
+      right: 30px;
+    }
+
+    .slick-dots li {
+      display: inline;
+    }
+
+    .custom-dot {
+      background-color: #ccc;
+      border-radius: 50%;
+      cursor: pointer;
+      display: inline-block;
+      height: 10px;
+      margin: 0 5px;
+      width: 10px;
+    }
+
+    .slick-active .custom-dot {
+      background-color: #333;
     }
   </style>
 </head>
@@ -24,6 +53,141 @@
   <h1 id="game-title">Color Maze</h1>
 
   <div id="levels">
+    <div class="slick-slider">
+      <div class="slide">
+        <div class="one-fourth" data-url="g1.html">
+          <a href="g1.html">1. Pink Paradise</a>
+          <p><span id="g1">0</span>/10</p>
+        </div>
+
+        <div class="one-fourth" data-url="g2.html">
+          <a href="g2.html">2. Blue Bay</a>
+          <p><span id="g2">0</span>/10</p>
+        </div>
+
+        <div class="one-fourth" data-url="g3.html">
+          <a href="g3.html">3. Green Gardens</a>
+          <p><span id="g3">0</span>/10</p>
+        </div>
+
+        <div class="one-fourth last" data-url="g4.html">
+          <a href="g4.html">4. Yellow Peaks</a>
+          <p><span id="g4">0</span>/10</p>
+        </div>
+
+        <div class="spacer"></div>
+
+        <div class="one-fourth" data-url="g5.html">
+          <a href="g5.html">5. Purple Plains</a>
+          <p><span id="g5">0</span>/10</p>
+        </div>
+
+        <div class="one-fourth" data-url="g6.html">
+          <a href="g6.html">6. Orange Oasis</a>
+          <p><span id="g6">0</span>/10</p>
+        </div>
+
+        <div class="one-fourth" data-url="g7.html">
+          <a href="g7.html">7. Cobalt Shadows</a>
+          <p><span id="g7">0</span>/10</p>
+        </div>
+
+        <div class="one-fourth last" data-url="g8.html">
+          <a href="g8.html">8. Ruby Ridge</a>
+          <p><span id="g8">0</span>/10</p>
+        </div>
+
+        <div class="spacer"></div>
+
+        <div class="one-fourth" data-url="g9.html">
+          <a href="g9.html">9. Midnight Jungle</a>
+          <p><span id="g9">0</span>/10</p>
+        </div>
+
+        <div class="one-fourth" data-url="g10.html">
+          <a href="g10.html">10. Crystal Ocean</a>
+          <p><span id="g10">0</span>/10</p>
+        </div>
+
+        <div class="one-fourth" data-url="g11.html">
+          <a href="g11.html">11. Beach Villa</a>
+          <p><span id="g11">0</span>/10</p>
+        </div>
+
+        <div class="one-fourth last" data-url="g12.html">
+          <a href="g12.html">12. Bubblegum Bliss</a>
+          <p><span id="g12">0</span>/21</p>
+        </div>
+      </div><!-- end slide -->
+
+      <div class="slide">
+        <div class="one-fourth" data-url="g13.html">
+          <a href="g13.html">13. Level 13</a>
+          <p><span id="g13">0</span>/10</p>
+        </div>
+
+        <div class="one-fourth" data-url="g14.html">
+          <a href="g14.html">14. Level 14</a>
+          <p><span id="g14">0</span>/10</p>
+        </div>
+
+        <div class="one-fourth" data-url="g15.html">
+          <a href="g15.html">15. Level 15</a>
+          <p><span id="g15">0</span>/10</p>
+        </div>
+
+        <div class="one-fourth last" data-url="g16.html">
+          <a href="g16.html">16. Level 16</a>
+          <p><span id="g16">0</span>/10</p>
+        </div>
+
+        <div class="spacer"></div>
+
+        <div class="one-fourth" data-url="g17.html">
+          <a href="g17.html">17. Level 17</a>
+          <p><span id="g17">0</span>/10</p>
+        </div>
+
+        <div class="one-fourth" data-url="g18.html">
+          <a href="g18.html">18. Level 18</a>
+          <p><span id="g18">0</span>/10</p>
+        </div>
+
+        <div class="one-fourth" data-url="g19.html">
+          <a href="g19.html">19. Level 19</a>
+          <p><span id="g19">0</span>/10</p>
+        </div>
+
+        <div class="one-fourth last" data-url="g20.html">
+          <a href="g20.html">20. Level 20</a>
+          <p><span id="g20">0</span>/10</p>
+        </div>
+
+        <div class="spacer"></div>
+
+        <div class="one-fourth" data-url="g21.html">
+          <a href="g21.html">21. Level 21</a>
+          <p><span id="g21">0</span>/10</p>
+        </div>
+
+        <div class="one-fourth" data-url="g22.html">
+          <a href="g22.html">22. Level 22</a>
+          <p><span id="g22">0</span>/10</p>
+        </div>
+
+        <div class="one-fourth" data-url="g23.html">
+          <a href="g23.html">23. Level 23</a>
+          <p><span id="g23">0</span>/10</p>
+        </div>
+
+        <div class="one-fourth last" data-url="g24.html">
+          <a href="g24.html">24. Level 24</a>
+          <p><span id="g24">0</span>/10</p>
+        </div>
+      </div><!-- end slide -->
+    </div><!-- end slider -->
+
+    <!--
     <div class="one-fourth" data-url="g1.html">
       <a href="g1.html">1. Pink Paradise</a>
       <p><span id="g1">0</span>/10</p>
@@ -87,6 +251,7 @@
       <a href="g12.html">12. Bubblegum Bliss</a>
       <p><span id="g12">0</span>/21</p>
     </div>
+  -->
   </div><!-- end levels -->
 
   <div class="spacer"></div><!-- end spacer -->
@@ -111,6 +276,7 @@
 
   <!-- js -->
   <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/slick.min.js"></script>
   <script src="js/sweetalert.min.js"></script>
   <script src="js/version-info.js"></script>
   <script src="js/main.js"></script>
