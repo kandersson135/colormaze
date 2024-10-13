@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+  <meta name="theme-color" content="#eeeeee">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="mobile-web-app-capable" content="yes">
+
+  <link rel="apple-touch-icon" href="img/webapp-icon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
+  <title>Color Maze</title>
+
+  <!-- css -->
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+  <style>
+    .hero {background-color: #ff77bc !important;}
+    .colored {background-color: #ffaed7;}
+  </style>
+</head>
+<body>
+  <div id="back-btn"><a href="index.html">&lsaquo; BACK</a></div>
+  <div id="level">Lvl: <span>1</span>/10</div>
+  <div id="gameboard"></div>
+  <div id="timer">TIME: <span>10</span>s</div>
+
+  <div id="d-pad">
+    <div id="d-up">&rsaquo;</div>
+    <div id="d-left">&lsaquo;</div>
+    <div id="d-right">&rsaquo;</div>
+    <div id="d-down">&lsaquo;</div>
+  </div>
+
+  <div id="version-info">
+    <p></p>
+  </div><!-- end version info -->
+
+  <!-- js -->
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/clickspark.min.js"></script>
+  <script src="js/version-info.js"></script>
+  <script src="js/g13.js"></script>
+</body>
+</html>
