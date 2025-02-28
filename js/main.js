@@ -14,17 +14,30 @@ $(document).ready(function() {
   var currentYear = new Date().getFullYear();
 
   // Iterate through localstorage and check if completed
-  for (let i = 1; i <= 12; i++) {
-    let gValue = localStorage.getItem(`g${i}`);
-    const $element = $(`#g${i}`);
+  // for (let i = 1; i <= 12; i++) {
+  //   let gValue = localStorage.getItem(`g${i}`);
+  //   const $element = $(`#g${i}`);
+  //
+  //   const number = gValue === null ? 0 : parseInt(gValue);
+  //   $element.text(number);
+  //
+  //   if (number === 10 || (i === 12 && number === 21)) {
+  //     $element.parent().parent().addClass('completed');
+  //   }
+  // }
 
+  $("span[id^='g']").each(function() {
+    let id = $(this).attr("id");
+    let gValue = localStorage.getItem(id);
     const number = gValue === null ? 0 : parseInt(gValue);
-    $element.text(number);
 
-    if (number === 10 || (i === 12 && number === 21)) {
-      $element.parent().parent().addClass('completed');
+    $(this).text(number);
+
+    if (number === 10 || (id === "g12" && number === 21)) {
+      $(this).parent().parent().addClass('completed');
     }
-  }
+  });
+
 
   // Lock all levels except first one
   var divs = $('.one-fourth:not(:first)');
