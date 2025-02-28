@@ -14,29 +14,16 @@ $(document).ready(function() {
   var currentYear = new Date().getFullYear();
 
   // Iterate through localstorage and check if completed
-  // for (let i = 1; i <= 13; i++) {
-  //   let gValue = localStorage.getItem(`g${i}`);
-  //   const $element = $(`#g${i}`);
-  //
-  //   const number = gValue === null ? 0 : parseInt(gValue);
-  //   $element.text(number);
-  //
-  //   if (number === 10 || (i === 12 && number === 21)) {
-  //     $element.parent().parent().addClass('completed');
-  //   }
-  // }
+  for (let i = 1; i <= 12; i++) {
+    let gValue = localStorage.getItem(`g${i}`);
+    const $element = $(`#g${i}`);
 
-  function checkElements() {
-    $("[id^='g']").each(function() {
-      let id = $(this).attr("id");
-      let gValue = localStorage.getItem(id);
-      const number = gValue === null ? 0 : parseInt(gValue);
-      $(this).text(number);
+    const number = gValue === null ? 0 : parseInt(gValue);
+    $element.text(number);
 
-      if (number === 10 || (id === "g12" && number === 21)) {
-        $(this).parent().parent().addClass('completed');
-      }
-    });
+    if (number === 10 || (i === 12 && number === 21)) {
+      $element.parent().parent().addClass('completed');
+    }
   }
 
   // Lock all levels except first one
@@ -46,7 +33,7 @@ $(document).ready(function() {
   });
 
   // Check if previous level is completed and unlock the next level
-  for (var i = 1; i <= 12; i++) {
+  for (var i = 1; i <= 11; i++) {
     if ($('#g' + i).text() == 10 || $('#g12').text() == 21) {
       $('#g' + i).parent().parent().nextAll('.one-fourth:first').removeClass('locked');
     }
@@ -101,16 +88,12 @@ $(document).ready(function() {
 	}, false);
 
   // Activate slick slider
-  $('.slick-slider').slick({
-    autoplay: false,
-    dots: true,
-    arrows: false,
-    customPaging: function(slider, i) {
-      return '<span class="custom-dot"></span>';
-    }
-  });
-
-  $('.slick-slider').on('afterChange', function() {
-    checkElements();
-  });
+  // $('.slick-slider').slick({
+  //   autoplay: false,
+  //   dots: true,
+  //   arrows: false,
+  //   customPaging: function(slider, i) {
+  //     return '<span class="custom-dot"></span>';
+  //   }
+  // });
 });
