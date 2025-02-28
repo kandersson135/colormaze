@@ -14,7 +14,7 @@ $(document).ready(function() {
   var currentYear = new Date().getFullYear();
 
   // Iterate through localstorage and check if completed
-  for (let i = 1; i <= 12; i++) {
+  for (let i = 1; i <= 13; i++) {
     let gValue = localStorage.getItem(`g${i}`);
     const $element = $(`#g${i}`);
 
@@ -33,7 +33,7 @@ $(document).ready(function() {
   });
 
   // Check if previous level is completed and unlock the next level
-  for (var i = 1; i <= 11; i++) {
+  for (var i = 1; i <= 12; i++) {
     if ($('#g' + i).text() == 10 || $('#g12').text() == 21) {
       $('#g' + i).parent().parent().nextAll('.one-fourth:first').removeClass('locked');
     }
