@@ -1,7 +1,7 @@
 {
   "name": "Color Maze",
   "short_name": "Color Maze",
-  "description": "An exciting puzzle game where you control a block throu a maze.",
+  "description": "An exciting puzzle game where you control a block through a maze.",
   "icons": [
     {
       "src": "img/webapp-icon.png",
