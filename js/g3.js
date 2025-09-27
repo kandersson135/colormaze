@@ -303,6 +303,43 @@ $(document).ready(function() {
     }
   });
 
+  // handle touch events
+  var touchStartX, touchStartY, touchEndX, touchEndY;
+
+  $(document).on('touchstart', function(e) {
+    touchStartX = e.originalEvent.touches[0].clientX;
+    touchStartY = e.originalEvent.touches[0].clientY;
+  });
+
+  $(document).on('touchend', function(e) {
+    touchEndX = e.originalEvent.changedTouches[0].clientX;
+    touchEndY = e.originalEvent.changedTouches[0].clientY;
+
+    var dx = touchEndX - touchStartX;
+    var dy = touchEndY - touchStartY;
+
+    // Check if swipe was mostly horizontal or vertical
+    if (Math.abs(dx) > Math.abs(dy)) {
+      // Horizontal swipe
+      if (dx > 30 && heroPosition % 5 !== 4) {
+        // Swipe right
+        moveHero(heroPosition + 1);
+      } else if (dx < -30 && heroPosition % 5 !== 0) {
+        // Swipe left
+        moveHero(heroPosition - 1);
+      }
+    } else {
+      // Vertical swipe
+      if (dy > 30 && heroPosition < 20) {
+        // Swipe down
+        moveHero(heroPosition + 5);
+      } else if (dy < -30 && heroPosition >= 5) {
+        // Swipe up
+        moveHero(heroPosition - 5);
+      }
+    }
+  });
+
   // Handle button clicks
   $('#d-left').click(function() {
     if (heroPosition % 5 !== 0) {
