@@ -444,7 +444,7 @@ div.spacer {clear:both; display:block; height:10px;}
 
 @media (max-width: 768px) {
   #gameboard {
-    margin-top: 150px;
+    margin-top: 120px;
     width: 300px;
     height: 300px;
   }
@@ -465,7 +465,7 @@ div.spacer {clear:both; display:block; height:10px;}
   }
 
   #back-btn {
-    top: 45px;
+    top: 48px;
     left: 25px;
   }
 
