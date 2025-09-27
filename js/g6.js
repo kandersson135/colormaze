@@ -308,6 +308,11 @@ $(document).ready(function() {
     if (heroPosition % 5 !== 0) {
       var newPosition = heroPosition - 1;
       moveHero(newPosition);
+
+      if ("vibrate" in navigator) {
+        // Execute vibration code
+        navigator.vibrate(10); // Vibrate for 200 milliseconds
+      }
     }
   });
 
@@ -315,6 +320,11 @@ $(document).ready(function() {
     if (heroPosition >= 5) {
       var newPosition = heroPosition - 5;
       moveHero(newPosition);
+
+      if ("vibrate" in navigator) {
+        // Execute vibration code
+        navigator.vibrate(10); // Vibrate for 200 milliseconds
+      }
     }
   });
 
@@ -322,6 +332,11 @@ $(document).ready(function() {
     if (heroPosition % 5 !== 4) {
       var newPosition = heroPosition + 1;
       moveHero(newPosition);
+
+      if ("vibrate" in navigator) {
+        // Execute vibration code
+        navigator.vibrate(10); // Vibrate for 200 milliseconds
+      }
     }
   });
 
@@ -329,6 +344,11 @@ $(document).ready(function() {
     if (heroPosition < 20) {
       var newPosition = heroPosition + 5;
       moveHero(newPosition);
+
+      if ("vibrate" in navigator) {
+        // Execute vibration code
+        navigator.vibrate(10); // Vibrate for 200 milliseconds
+      }
     }
   });
 

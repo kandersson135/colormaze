@@ -38,7 +38,6 @@ $(document).ready(function() {
     }
   });
 
-
   // Lock all levels except first one
   var divs = $('.one-fourth:not(:first)');
   divs.each(function(index) {

@@ -443,10 +443,6 @@ div.spacer {clear:both; display:block; height:10px;}
 }
 
 @media (max-width: 768px) {
-  html, body {
-    overflow: auto !important;
-  }
-
   #gameboard {
     width: 300px;
     height: 300px;
