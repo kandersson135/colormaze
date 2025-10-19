@@ -354,55 +354,6 @@ $(document).ready(function() {
     }
   });
 
-  // Handle button clicks
-  $('#d-left').click(function() {
-    if (heroPosition % 5 !== 0) {
-      var newPosition = heroPosition - 1;
-      moveHero(newPosition);
-
-      if ("vibrate" in navigator) {
-        // Execute vibration code
-        navigator.vibrate(10); // Vibrate for 200 milliseconds
-      }
-    }
-  });
-
-  $('#d-up').click(function() {
-    if (heroPosition >= 5) {
-      var newPosition = heroPosition - 5;
-      moveHero(newPosition);
-
-      if ("vibrate" in navigator) {
-        // Execute vibration code
-        navigator.vibrate(10); // Vibrate for 200 milliseconds
-      }
-    }
-  });
-
-  $('#d-right').click(function() {
-    if (heroPosition % 5 !== 4) {
-      var newPosition = heroPosition + 1;
-      moveHero(newPosition);
-
-      if ("vibrate" in navigator) {
-        // Execute vibration code
-        navigator.vibrate(10); // Vibrate for 200 milliseconds
-      }
-    }
-  });
-
-  $('#d-down').click(function() {
-    if (heroPosition < 20) {
-      var newPosition = heroPosition + 5;
-      moveHero(newPosition);
-
-      if ("vibrate" in navigator) {
-        // Execute vibration code
-        navigator.vibrate(10); // Vibrate for 200 milliseconds
-      }
-    }
-  });
-
   // Detect backspace key press
   $(document).keydown(function(e) {
     if (e.keyCode == 8) { // Check if the pressed key is the backspace key
