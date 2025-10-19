@@ -6,9 +6,15 @@ $(document).ready(function() {
   var success = new Audio('audio/success.mp3');
   var fail = new Audio('audio/fail.mp3');
   var ticktock = new Audio('audio/ticktock.wav');
+  var pop = new Audio('audio/pop.mp3');
+  var whooshIn = new Audio('audio/whoosh-in.mp3');
+  var whooshOut = new Audio('audio/whoosh-out.mp3');
   success.volume = 0.3;
   fail.volume = 0.3;
   ticktock.volume = 0.3;
+  pop.volume = 0.3;
+  whooshIn.volume = 0.3;
+  whooshOut.volume = 0.3;
   var currentLevel = 1;
   var tiles = [];
   var heroPosition = 0;
@@ -162,6 +168,9 @@ $(document).ready(function() {
     tiles[heroPosition].removeClass('hero');
     tiles[position].addClass('hero');
 
+    pop.currentTime = 0; // rewind to start so rapid moves don't overlap incorrectly
+    pop.play();
+
     // Check if the target tile is already colored
     if (tiles[position].hasClass('colored')) {
       restartLevel(); // Restart the current level
@@ -205,7 +214,12 @@ $(document).ready(function() {
         // Slide off and slide in gameboard
         setTimeout(function(){
           $('#gameboard').animate({ left: '+=50px' }, 200, function() {  // Bounce to the right
+            whooshOut.currentTime = 0;
+            whooshOut.play();
             $(this).animate({ left: '-1000px' }, 500, function() {  // Slide to the left
+              whooshIn.currentTime = 0;
+              whooshIn.play();
+
               // Reset position off-screen to the right
               $(this).css('left', '1000px').animate({ left: '0' }, 500);  // Slide in from the right
             });

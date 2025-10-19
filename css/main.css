@@ -58,6 +58,13 @@ body {
   /*border: 1px solid rgba(175, 175, 175, 0.1);*/
 }
 
+.tile.hero { animation: hero-pop 160ms ease-out; }
+@keyframes hero-pop {
+  0% { transform: scale(0.9) }
+  60% { transform: scale(1.05) }
+  100% { transform: scale(1) }
+}
+
 .hole,
 .troll {
   background-color: rgba(47, 47, 46, 0.1);
