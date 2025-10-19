@@ -361,7 +361,7 @@ $(document).ready(function() {
   // Detect backspace key press
   $(document).keydown(function(e) {
     if (e.keyCode == 8) { // Check if the pressed key is the backspace key
-      window.location.href = "index.html"; // Navigate to index.html
+      window.location.href = "/colormaze/"; // Navigate to index.html
     }
   });
 
