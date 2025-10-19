@@ -205,7 +205,7 @@ $(document).ready(function() {
         if (currentLevel > customGameboards.length) {
           localStorage.setItem("g7", 10);
           setTimeout(function(){
-            window.location = "index.html";
+            window.location = "/colormaze/";
           },800);
         } else {
           localStorage.setItem("g7", currentLevel);
